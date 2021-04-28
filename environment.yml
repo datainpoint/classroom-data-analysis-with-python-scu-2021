@@ -14,5 +14,4 @@ dependencies:
   - matplotlib
   - xlrd
   - openpyxl
-  - odf
   - pyxlsb
