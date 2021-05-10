@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 
-<title>01-programming-with-python slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>02-data-analysis-with-python slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 <!-- General and theme style sheets -->
 <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/dist/reveal.css">
@@ -14385,7 +14385,7 @@ div.jp-OutputPrompt {
 <div class="slides"><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Python-&#31243;&#24335;&#35486;&#35328;&#21021;&#32026;&#29677;&#24037;&#20316;&#22346;">Python &#31243;&#24335;&#35486;&#35328;&#21021;&#32026;&#29677;&#24037;&#20316;&#22346;<a class="anchor-link" href="#Python-&#31243;&#24335;&#35486;&#35328;&#21021;&#32026;&#29677;&#24037;&#20316;&#22346;">&#182;</a></h1><blockquote><p>Python 介紹，東吳大學，2021-05-06</p>
+<h1 id="Python-&#31243;&#24335;&#35486;&#35328;&#21021;&#32026;&#29677;&#24037;&#20316;&#22346;">Python &#31243;&#24335;&#35486;&#35328;&#21021;&#32026;&#29677;&#24037;&#20316;&#22346;<a class="anchor-link" href="#Python-&#31243;&#24335;&#35486;&#35328;&#21021;&#32026;&#29677;&#24037;&#20316;&#22346;">&#182;</a></h1><blockquote><p>Python 資料分析，東吳大學，2021-05-13</p>
 </blockquote>
 <p><a href="https://www.datainpoint.com">數據交點</a> | 郭耀仁 <a href="mailto:yaojenkuo@datainpoint.com">yaojenkuo@datainpoint.com</a></p>
 
@@ -14393,59 +14393,58 @@ div.jp-OutputPrompt {
 </div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#36039;&#26009;&#32080;&#27083;">&#36039;&#26009;&#32080;&#27083;<a class="anchor-link" href="#&#36039;&#26009;&#32080;&#27083;">&#182;</a></h2>
+<h2 id="&#36039;&#26009;&#20998;&#26512;&#33287;&#31649;&#32218;&#27969;">&#36039;&#26009;&#20998;&#26512;&#33287;&#31649;&#32218;&#27969;<a class="anchor-link" href="#&#36039;&#26009;&#20998;&#26512;&#33287;&#31649;&#32218;&#27969;">&#182;</a></h2>
 </div>
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#20160;&#40636;&#26159;&#36039;&#26009;&#32080;&#27083;">&#20160;&#40636;&#26159;&#36039;&#26009;&#32080;&#27083;<a class="anchor-link" href="#&#20160;&#40636;&#26159;&#36039;&#26009;&#32080;&#27083;">&#182;</a></h2><blockquote><p>在電腦中用來儲存以及組織資料的機制，可以透過程式語言所提供的資料類型與自行定義類別實現，一個設計良好的資料結構，會在儘可能使用較少的時間與空間資源下，支援各種程式執行。</p>
-</blockquote>
-<p>Source: <a href="https://en.wikipedia.org/wiki/Data_structure">https://en.wikipedia.org/wiki/Data_structure</a></p>
+<h2 id="&#36039;&#26009;&#20998;&#26512;&#30340;&#19968;&#20999;&#37117;&#33287;&#31649;&#32218;&#27969;&#24687;&#24687;&#30456;&#38364;">&#36039;&#26009;&#20998;&#26512;&#30340;&#19968;&#20999;&#37117;&#33287;&#31649;&#32218;&#27969;&#24687;&#24687;&#30456;&#38364;<a class="anchor-link" href="#&#36039;&#26009;&#20998;&#26512;&#30340;&#19968;&#20999;&#37117;&#33287;&#31649;&#32218;&#27969;&#24687;&#24687;&#30456;&#38364;">&#182;</a></h2><p><img src="https://i.imgur.com/din6Ig6.png" alt="Imgur"></p>
+<p>圖片來源: <a href="https://r4ds.had.co.nz/">https://r4ds.had.co.nz/</a></p>
 
 </div>
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#28858;&#20160;&#40636;&#38656;&#35201;&#36039;&#26009;&#32080;&#27083;">&#28858;&#20160;&#40636;&#38656;&#35201;&#36039;&#26009;&#32080;&#27083;<a class="anchor-link" href="#&#28858;&#20160;&#40636;&#38656;&#35201;&#36039;&#26009;&#32080;&#27083;">&#182;</a></h2><ul>
-<li>在軟體工程師日常的工作任務中，資料處理佔有相當高的比例。</li>
-<li>需要有一個機制能夠協助他們輸入、處理最後輸出資料。</li>
-<li>這個「機制」就是<strong>資料結構</strong>。</li>
+<h2 id="&#27599;&#20491;&#29872;&#31680;&#30340;&#24847;&#28085;">&#27599;&#20491;&#29872;&#31680;&#30340;&#24847;&#28085;<a class="anchor-link" href="#&#27599;&#20491;&#29872;&#31680;&#30340;&#24847;&#28085;">&#182;</a></h2><ul>
+<li>Import：從常見來源將資料載入分析環境。</li>
+<li>Tidy：清理與整併資料內容。</li>
+<li>Transform：轉換資料為適當的樣式。</li>
+<li>Visualize：探索分析資料的形狀、相關、組成與趨勢。</li>
 </ul>
 
 </div>
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#22235;&#20491;&#20839;&#24314;&#30340;-Python-&#22522;&#30990;&#36039;&#26009;&#32080;&#27083;">&#22235;&#20491;&#20839;&#24314;&#30340; Python &#22522;&#30990;&#36039;&#26009;&#32080;&#27083;<a class="anchor-link" href="#&#22235;&#20491;&#20839;&#24314;&#30340;-Python-&#22522;&#30990;&#36039;&#26009;&#32080;&#27083;">&#182;</a></h2><ul>
-<li><code>list</code></li>
-<li><code>tuple</code></li>
-<li><code>dict</code> 字典的簡稱</li>
-<li><code>set</code></li>
+<h2 id="&#27599;&#20491;&#29872;&#31680;&#30340;&#24847;&#28085;&#65288;&#32396;&#65289;">&#27599;&#20491;&#29872;&#31680;&#30340;&#24847;&#28085;&#65288;&#32396;&#65289;<a class="anchor-link" href="#&#27599;&#20491;&#29872;&#31680;&#30340;&#24847;&#28085;&#65288;&#32396;&#65289;">&#182;</a></h2><ul>
+<li>Model：預測或挖掘資料的隱含特徵。</li>
+<li>Communicate：向產品、行銷與管理團隊精準且有效地傳達分析洞察。</li>
+<li>Program：利用程式語言掌握管線流。</li>
 </ul>
 
 </div>
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="list"><code>list</code><a class="anchor-link" href="#list">&#182;</a></h2><ul>
-<li><code>list</code> 是一種「有序」且能夠「更新」的資料結構。</li>
-<li><code>list</code> 可以透過「逗號」<code>,</code> 與「中括號」<code>[]</code> 宣告而成。</li>
+<h2 id="&#27599;&#20491;&#29872;&#31680;&#37117;&#26377;&#23565;&#25033;&#30340;&#31532;&#19977;&#26041;&#22871;&#20214;&#25903;&#25588;">&#27599;&#20491;&#29872;&#31680;&#37117;&#26377;&#23565;&#25033;&#30340;&#31532;&#19977;&#26041;&#22871;&#20214;&#25903;&#25588;<a class="anchor-link" href="#&#27599;&#20491;&#29872;&#31680;&#37117;&#26377;&#23565;&#25033;&#30340;&#31532;&#19977;&#26041;&#22871;&#20214;&#25903;&#25588;">&#182;</a></h2><ul>
+<li><a href="https://numpy.org/">NumPy</a> 可以支援 Import、Tidy、Transform 與 Model</li>
+<li><a href="https://pandas.pydata.org/">Pandas</a> 可以支援 Import、Tidy、Transform 與 Visualise</li>
 </ul>
 
 </div>
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#23459;&#21578;&#19968;&#20491;-list">&#23459;&#21578;&#19968;&#20491; <code>list</code><a class="anchor-link" href="#&#23459;&#21578;&#19968;&#20491;-list">&#182;</a></h2>
+<h2 id="&#30906;&#35469;&#20998;&#26512;&#29872;&#22659;&#33021;&#22816;&#20351;&#29992;&#36889;&#20841;&#20491;&#22871;&#20214;">&#30906;&#35469;&#20998;&#26512;&#29872;&#22659;&#33021;&#22816;&#20351;&#29992;&#36889;&#20841;&#20491;&#22871;&#20214;<a class="anchor-link" href="#&#30906;&#35469;&#20998;&#26512;&#29872;&#22659;&#33021;&#22816;&#20351;&#29992;&#36889;&#20841;&#20491;&#22871;&#20214;">&#182;</a></h2>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">primes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">primes</span><span class="p">)</span> <span class="c1"># use type() to check type</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 
      </div>
@@ -14453,33 +14452,10 @@ div.jp-OutputPrompt {
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>list</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#20351;&#29992;&#20839;&#24314;&#20989;&#25976;-len--&#24471;&#30693;&#19968;&#20491;-list-&#20013;&#26377;&#24190;&#20491;&#36039;&#26009;&#20540;">&#20351;&#29992;&#20839;&#24314;&#20989;&#25976; <code>len</code>  &#24471;&#30693;&#19968;&#20491; <code>list</code> &#20013;&#26377;&#24190;&#20491;&#36039;&#26009;&#20540;<a class="anchor-link" href="#&#20351;&#29992;&#20839;&#24314;&#20989;&#25976;-len--&#24471;&#30693;&#19968;&#20491;-list-&#20013;&#26377;&#24190;&#20491;&#36039;&#26009;&#20540;">&#182;</a></h2>
+<h2 id="&#27298;&#35222;&#36889;&#20123;&#31532;&#19977;&#26041;&#22871;&#20214;&#30340;&#29256;&#26412;&#36039;&#35338;">&#27298;&#35222;&#36889;&#20123;&#31532;&#19977;&#26041;&#22871;&#20214;&#30340;&#29256;&#26412;&#36039;&#35338;<a class="anchor-link" href="#&#27298;&#35222;&#36889;&#20123;&#31532;&#19977;&#26041;&#22871;&#20214;&#30340;&#29256;&#26412;&#36039;&#35338;">&#182;</a></h2>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -14487,66 +14463,9 @@ div.jp-OutputPrompt {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">primes</span><span class="p">)</span> <span class="c1"># use len() to check length</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>5</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#24478;&#19968;&#20491;-list-&#20013;&#21462;&#20986;&#36039;&#26009;&#30340;&#26041;&#24335;">&#24478;&#19968;&#20491; <code>list</code> &#20013;&#21462;&#20986;&#36039;&#26009;&#30340;&#26041;&#24335;<a class="anchor-link" href="#&#24478;&#19968;&#20491;-list-&#20013;&#21462;&#20986;&#36039;&#26009;&#30340;&#26041;&#24335;">&#182;</a></h2><ul>
-<li><strong>Indexing</strong> 索引指的是從一個 <code>list</code> 中取出特定位置的單個資料值。</li>
-<li><strong>Slicing</strong> 切割指的是從一個 <code>list</code> 中擷取特定的片段。</li>
-</ul>
-
-</div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Indexing-&#32034;&#24341;-[index]">Indexing &#32034;&#24341; <code>[index]</code><a class="anchor-link" href="#Indexing-&#32034;&#24341;-[index]">&#182;</a></h2><p><code>list</code> 採用兩個方向的索引機制：</p>
-<ol>
-<li>由左至右：「從零開始」的索引機制。</li>
-<li>由右至左：「從負一開始」的索引機制。</li>
-</ol>
-
-</div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">primes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># the first element</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">primes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># the second element</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">primes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># the last element</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">primes</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># the second last element</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Note that there are 2 underlines before and after __version__ attributes</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14566,10 +14485,8 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>2
-3
-11
-7
+<pre>1.18.4
+1.1.5
 </pre>
 </div>
 </div>
@@ -14578,26 +14495,65 @@ div.jp-OutputPrompt {
 
 </div>
 
+</div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="NumPy-&#24555;&#36895;&#20837;&#38272;">NumPy &#24555;&#36895;&#20837;&#38272;<a class="anchor-link" href="#NumPy-&#24555;&#36895;&#20837;&#38272;">&#182;</a></h2>
+</div>
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Slicing-&#20999;&#21106;-[start:stop:step]">Slicing &#20999;&#21106; <code>[start:stop:step]</code><a class="anchor-link" href="#Slicing-&#20999;&#21106;-[start:stop:step]">&#182;</a></h2><p>除了可以取出特定位置的單個資料值，<code>list</code> 也支援擷取特定片段，藉此獲得一個較短長度 <code>list</code> 的語法。</p>
-<ul>
-<li><code>start</code> 起始位置（包含）。</li>
-<li><code>stop</code> 終止位置（排除）。</li>
-<li><code>step</code> 間隔。</li>
-</ul>
+<h2 id="&#31777;&#20171;-NumPy-&#22871;&#20214;">&#31777;&#20171; NumPy &#22871;&#20214;<a class="anchor-link" href="#&#31777;&#20171;-NumPy-&#22871;&#20214;">&#182;</a></h2><blockquote><p>NumPy，Numerical Python 的簡稱，是使用 Python 進行科學計算的第三方套件，創造了一個稱為 N 維陣列（ndarray）的類別，透過 N 維陣列，可以將 Python 從一個泛用（general purposed）程式語言轉變成一個科學計算（scientific computing）程式語言，並且有豐富的統計、線性代數與隨機的函數。</p>
+</blockquote>
 
 </div>
+</div></section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="&#31684;&#20363;&#36039;&#26009;&#65306;COVID-19-&#27599;&#26085;&#22577;&#21578;">&#31684;&#20363;&#36039;&#26009;&#65306;COVID-19 &#27599;&#26085;&#22577;&#21578;<a class="anchor-link" href="#&#31684;&#20363;&#36039;&#26009;&#65306;COVID-19-&#27599;&#26085;&#22577;&#21578;">&#182;</a></h2><p>資料來源：<a href="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports">https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports</a></p>
+
+</div>
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="k">def</span> <span class="nf">get_latest_daily_report</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function returns the latest global daily report from https://github.com/CSSEGISandData/COVID-19 and its file date.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">latest_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+    <span class="n">day_delta</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;%m-</span><span class="si">%d</span><span class="s1">-%Y&#39;</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">latest_date_fmt</span> <span class="o">=</span> <span class="n">latest_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">fmt</span><span class="p">)</span>
+            <span class="n">csv_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/</span><span class="si">{}</span><span class="s2">.csv&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">latest_date_fmt</span><span class="p">)</span>
+            <span class="n">daily_report</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_url</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;載入了 </span><span class="si">{}</span><span class="s2"> 的每日報告。&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">latest_date_fmt</span><span class="p">))</span>
+            <span class="k">break</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">latest_date_fmt</span> <span class="o">=</span> <span class="n">latest_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">fmt</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;尚未有 </span><span class="si">{}</span><span class="s2"> 的每日報告。&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">latest_date_fmt</span><span class="p">))</span>
+            <span class="n">latest_date</span> <span class="o">-=</span> <span class="n">day_delta</span>
+    <span class="k">return</span> <span class="n">daily_report</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">primes</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">:</span><span class="mi">1</span><span class="p">])</span>            <span class="c1"># slicing the first 3 elements</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">primes</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">primes</span><span class="p">):</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># slicing the last 3 elements </span>
-<span class="nb">print</span><span class="p">(</span><span class="n">primes</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">primes</span><span class="p">):</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># slicing every second element</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">daily_report</span> <span class="o">=</span> <span class="n">get_latest_daily_report</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -14617,9 +14573,8 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[2, 3, 5]
-[5, 7, 11]
-[2, 5, 11]
+<pre>尚未有 05-10-2021 的每日報告。
+載入了 05-09-2021 的每日報告。
 </pre>
 </div>
 </div>
@@ -14631,22 +14586,16 @@ div.jp-OutputPrompt {
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Slicing-&#20999;&#21106;&#22914;&#26524;&#27794;&#26377;&#25351;&#23450;-start:stop:step&#65292;&#23601;&#25505;&#29992;&#20854;&#38928;&#35373;&#20540;">Slicing &#20999;&#21106;&#22914;&#26524;&#27794;&#26377;&#25351;&#23450; <code>start:stop:step</code>&#65292;&#23601;&#25505;&#29992;&#20854;&#38928;&#35373;&#20540;<a class="anchor-link" href="#Slicing-&#20999;&#21106;&#22914;&#26524;&#27794;&#26377;&#25351;&#23450;-start:stop:step&#65292;&#23601;&#25505;&#29992;&#20854;&#38928;&#35373;&#20540;">&#182;</a></h2><ul>
-<li><code>start</code> 起始位置（包含）預設為 <code>0</code>。</li>
-<li><code>stop</code> 終止位置（排除）預設為 <code>list</code> 的長度。</li>
-<li><code>step</code> 間隔預設為 <code>1</code>。</li>
-</ul>
-
+<h2 id="N-&#32173;&#38499;&#21015;&#21487;&#30001;&#36039;&#26009;&#26694;&#21462;&#20986;">N &#32173;&#38499;&#21015;&#21487;&#30001;&#36039;&#26009;&#26694;&#21462;&#20986;<a class="anchor-link" href="#N-&#32173;&#38499;&#21015;&#21487;&#30001;&#36039;&#26009;&#26694;&#21462;&#20986;">&#182;</a></h2>
 </div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">primes</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>  <span class="c1"># slicing the first 3 elements</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">primes</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:])</span> <span class="c1"># slicing the last 3 elements </span>
-<span class="nb">print</span><span class="p">(</span><span class="n">primes</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># slicing every second element</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">confirmed</span> <span class="o">=</span> <span class="n">daily_report</span><span class="p">[</span><span class="s1">&#39;Confirmed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">confirmed</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14662,15 +14611,15 @@ div.jp-OutputPrompt {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[2, 3, 5]
-[5, 7, 11]
-[2, 5, 11]
-</pre>
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>numpy.ndarray</pre>
 </div>
+
 </div>
 
 </div>
@@ -14680,17 +14629,47 @@ div.jp-OutputPrompt {
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#36879;&#36942;&#23459;&#21578;&#20358;&#26356;&#26032;-list-&#20013;&#30340;&#36039;&#26009;&#20540;">&#36879;&#36942;&#23459;&#21578;&#20358;&#26356;&#26032; <code>list</code> &#20013;&#30340;&#36039;&#26009;&#20540;<a class="anchor-link" href="#&#36879;&#36942;&#23459;&#21578;&#20358;&#26356;&#26032;-list-&#20013;&#30340;&#36039;&#26009;&#20540;">&#182;</a></h2>
+<h2 id="N-&#32173;&#38499;&#21015;&#25552;&#20379;&#20841;&#20491;&#22909;&#29992;&#30340;&#21151;&#33021;">N &#32173;&#38499;&#21015;&#25552;&#20379;&#20841;&#20491;&#22909;&#29992;&#30340;&#21151;&#33021;<a class="anchor-link" href="#N-&#32173;&#38499;&#21015;&#25552;&#20379;&#20841;&#20491;&#22909;&#29992;&#30340;&#21151;&#33021;">&#182;</a></h2><ul>
+<li>向量化（Vectorization）運算、有時也稱為元素級別（Element-wise）運算</li>
+<li>布林索引（Boolean indexing）</li>
+</ul>
+
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="&#21521;&#37327;&#21270;&#36939;&#31639;">&#21521;&#37327;&#21270;&#36939;&#31639;<a class="anchor-link" href="#&#21521;&#37327;&#21270;&#36939;&#31639;">&#182;</a></h2>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">primes</span><span class="p">)</span>   <span class="c1"># before update</span>
-<span class="n">primes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">13</span> <span class="c1"># update</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">primes</span><span class="p">)</span>   <span class="c1"># after update</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">deaths</span> <span class="o">=</span> <span class="n">daily_report</span><span class="p">[</span><span class="s1">&#39;Deaths&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">recovered</span> <span class="o">=</span> <span class="n">daily_report</span><span class="p">[</span><span class="s1">&#39;Recovered&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">active</span> <span class="o">=</span> <span class="n">confirmed</span> <span class="o">-</span> <span class="n">deaths</span> <span class="o">-</span> <span class="n">recovered</span> <span class="c1"># Vectorization</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div></section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="&#24067;&#26519;&#32034;&#24341;">&#24067;&#26519;&#32034;&#24341;<a class="anchor-link" href="#&#24067;&#26519;&#32034;&#24341;">&#182;</a></h2>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">confirmed</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">confirmed</span> <span class="o">&gt;</span> <span class="mi">100000</span><span class="p">)</span>                 <span class="c1"># Creating a boolean array</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">confirmed</span><span class="p">[</span><span class="n">confirmed</span> <span class="o">&gt;</span> <span class="mi">100000</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">)</span> <span class="c1"># Boolean indexing</span>
 </pre></div>
 
      </div>
@@ -14710,8 +14689,9 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[2, 3, 5, 7, 11]
-[2, 3, 5, 7, 13]
+<pre>3983
+[False  True  True ... False False False]
+244
 </pre>
 </div>
 </div>
@@ -14723,29 +14703,37 @@ div.jp-OutputPrompt {
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#20063;&#21487;&#20197;&#36879;&#36942;-list-&#30340;&#22810;&#31278;&#26041;&#27861;&#26356;&#26032;&#23427;">&#20063;&#21487;&#20197;&#36879;&#36942; <code>list</code> &#30340;&#22810;&#31278;&#26041;&#27861;&#26356;&#26032;&#23427;<a class="anchor-link" href="#&#20063;&#21487;&#20197;&#36879;&#36942;-list-&#30340;&#22810;&#31278;&#26041;&#27861;&#26356;&#26032;&#23427;">&#182;</a></h2><ul>
-<li><code>.append()</code></li>
-<li><code>.pop()</code></li>
-<li><code>.remove()</code></li>
-<li><code>.insert()</code></li>
-<li><code>.sort()</code></li>
-<li>...等</li>
-</ul>
-<p>我們可以透過 <code>TAB</code> 與 <code>SHIFT - TAB</code> 在 Jupyter 介面中查詢方法的文件與提示。</p>
+<h2 id="&#35430;&#33879;&#20351;&#29992;&#20839;&#24314;&#36039;&#26009;&#32080;&#27083;-list-&#23436;&#25104;&#21069;&#20841;&#20491;&#20219;&#21209;&#65288;&#34249;&#27492;&#39636;&#39511;-N-&#32173;&#38499;&#21015;&#30340;&#20415;&#21033;&#24615;&#65289;">&#35430;&#33879;&#20351;&#29992;&#20839;&#24314;&#36039;&#26009;&#32080;&#27083; <code>list</code> &#23436;&#25104;&#21069;&#20841;&#20491;&#20219;&#21209;&#65288;&#34249;&#27492;&#39636;&#39511; N &#32173;&#38499;&#21015;&#30340;&#20415;&#21033;&#24615;&#65289;<a class="anchor-link" href="#&#35430;&#33879;&#20351;&#29992;&#20839;&#24314;&#36039;&#26009;&#32080;&#27083;-list-&#23436;&#25104;&#21069;&#20841;&#20491;&#20219;&#21209;&#65288;&#34249;&#27492;&#39636;&#39511;-N-&#32173;&#38499;&#21015;&#30340;&#20415;&#21033;&#24615;&#65289;">&#182;</a></h2><ol>
+<li>計算治療中個案數。</li>
+<li>挑選確診數超過 10 萬的觀測值。</li>
+</ol>
 
 </div>
 </div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">primes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span>
-<span class="n">primes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>         <span class="c1"># appending an element to the end of a list</span>
-<span class="n">primes</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>              <span class="c1"># popping out the last element of a list</span>
-<span class="n">primes</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>          <span class="c1"># removing the first occurance of an element within a list</span>
-<span class="n">primes</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>       <span class="c1"># inserting certain element at a specific index</span>
-<span class="n">primes</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># sorting a list, reverse=False =&gt; ascending order; reverse=True =&gt; descending order</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 計算治療中個案數</span>
+<span class="n">confirmed</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">daily_report</span><span class="p">[</span><span class="s1">&#39;Confirmed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">deaths</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">daily_report</span><span class="p">[</span><span class="s1">&#39;Deaths&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">recovered</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">daily_report</span><span class="p">[</span><span class="s1">&#39;Recovered&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 挑選確診數超過 10 萬的觀測值</span>
+<span class="n">confirmed</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">daily_report</span><span class="p">[</span><span class="s1">&#39;Confirmed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14756,101 +14744,41 @@ div.jp-OutputPrompt {
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="tuple"><code>tuple</code><a class="anchor-link" href="#tuple">&#182;</a></h2><ul>
-<li><code>tuple</code> 是一種「有序」且「不能夠更新」的資料結構。</li>
-<li><code>tuple</code> 可以透過「逗號」<code>,</code> 與「小括號」<code>()</code> 宣告而成。</li>
+<h2 id="&#38500;&#20102;-N-&#32173;&#38499;&#21015;&#65292;NumPy-&#36996;&#38468;&#24118;&#35920;&#23500;&#30340;&#20989;&#25976;">&#38500;&#20102; N &#32173;&#38499;&#21015;&#65292;NumPy &#36996;&#38468;&#24118;&#35920;&#23500;&#30340;&#20989;&#25976;<a class="anchor-link" href="#&#38500;&#20102;-N-&#32173;&#38499;&#21015;&#65292;NumPy-&#36996;&#38468;&#24118;&#35920;&#23500;&#30340;&#20989;&#25976;">&#182;</a></h2><ul>
+<li>通用函數</li>
+<li>聚合函數</li>
+<li>隨機函數</li>
+<li>線性代數函數</li>
+<li>...etc.</li>
 </ul>
 
 </div>
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#23459;&#21578;&#19968;&#20491;-tuple">&#23459;&#21578;&#19968;&#20491; <code>tuple</code><a class="anchor-link" href="#&#23459;&#21578;&#19968;&#20491;-tuple">&#182;</a></h2>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">primes</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">primes</span><span class="p">)</span> <span class="c1"># use type() to check type</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>tuple</pre>
-</div>
+<h2 id="&#26296;&#35299;&#26356;&#22810;-NumPy-&#25552;&#20379;&#30340;&#21151;&#33021;">&#26296;&#35299;&#26356;&#22810; NumPy &#25552;&#20379;&#30340;&#21151;&#33021;<a class="anchor-link" href="#&#26296;&#35299;&#26356;&#22810;-NumPy-&#25552;&#20379;&#30340;&#21151;&#33021;">&#182;</a></h2><p><a href="https://www.numpy.org/devdocs/user/index.html">NumPy User Guide</a></p>
 
 </div>
-
+</div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Pandas-&#24555;&#36895;&#20837;&#38272;">Pandas &#24555;&#36895;&#20837;&#38272;<a class="anchor-link" href="#Pandas-&#24555;&#36895;&#20837;&#38272;">&#182;</a></h2>
 </div>
-
-</div>
-
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#20351;&#29992;&#20839;&#24314;&#20989;&#25976;-len--&#24471;&#30693;&#19968;&#20491;-tuple-&#20013;&#26377;&#24190;&#20491;&#36039;&#26009;&#20540;">&#20351;&#29992;&#20839;&#24314;&#20989;&#25976; <code>len</code>  &#24471;&#30693;&#19968;&#20491; <code>tuple</code> &#20013;&#26377;&#24190;&#20491;&#36039;&#26009;&#20540;<a class="anchor-link" href="#&#20351;&#29992;&#20839;&#24314;&#20989;&#25976;-len--&#24471;&#30693;&#19968;&#20491;-tuple-&#20013;&#26377;&#24190;&#20491;&#36039;&#26009;&#20540;">&#182;</a></h2>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">primes</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>5</pre>
-</div>
+<h2 id="&#31777;&#20171;-Pandas-&#22871;&#20214;">&#31777;&#20171; Pandas &#22871;&#20214;<a class="anchor-link" href="#&#31777;&#20171;-Pandas-&#22871;&#20214;">&#182;</a></h2><blockquote><p>Pandas，Panel DataFrame Series 的簡稱，是在 Python 中分析表格資料的第三方套件，創造了稱為索引（Index）、序列（Series）與資料框（DataFrame）的類別，透過這些類別，可以讓 Python 在面對文字檔案、Excel 試算表與關聯式資料庫時能夠使用更直覺的觀念操作。</p>
+</blockquote>
 
 </div>
-
-</div>
-
-</div>
-
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="tuple-&#22312;&#35377;&#22810;&#22320;&#26041;&#30340;&#34920;&#29694;&#33287;-list-&#30456;&#21516;&#65292;&#20687;&#26159;&#25903;&#25588;&#32034;&#24341;&#20197;&#21450;&#20999;&#21106;"><code>tuple</code> &#22312;&#35377;&#22810;&#22320;&#26041;&#30340;&#34920;&#29694;&#33287; <code>list</code> &#30456;&#21516;&#65292;&#20687;&#26159;&#25903;&#25588;&#32034;&#24341;&#20197;&#21450;&#20999;&#21106;<a class="anchor-link" href="#tuple-&#22312;&#35377;&#22810;&#22320;&#26041;&#30340;&#34920;&#29694;&#33287;-list-&#30456;&#21516;&#65292;&#20687;&#26159;&#25903;&#25588;&#32034;&#24341;&#20197;&#21450;&#20999;&#21106;">&#182;</a></h2>
+<h2 id="&#23559;-CSV-&#25991;&#23383;&#27284;&#26696;&#35712;&#20837;&#25104;&#28858;&#36039;&#26009;&#26694;">&#23559; CSV &#25991;&#23383;&#27284;&#26696;&#35712;&#20837;&#25104;&#28858;&#36039;&#26009;&#26694;<a class="anchor-link" href="#&#23559;-CSV-&#25991;&#23383;&#27284;&#26696;&#35712;&#20837;&#25104;&#28858;&#36039;&#26009;&#26694;">&#182;</a></h2><ul>
+<li>範例資料：COVID-19 每日報告</li>
+<li>資料來源：<a href="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports">https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports</a></li>
+</ul>
+
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -14858,8 +14786,8 @@ div.jp-OutputPrompt {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">primes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>   <span class="c1"># the first element</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">primes</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>  <span class="c1"># slicing the first 3 elements</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">daily_report</span> <span class="o">=</span> <span class="n">get_latest_daily_report</span><span class="p">()</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">daily_report</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14879,10 +14807,24 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>2
-(2, 3, 5)
+<pre>尚未有 05-10-2021 的每日報告。
+載入了 05-09-2021 的每日報告。
 </pre>
 </div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>pandas.core.frame.DataFrame</pre>
+</div>
+
 </div>
 
 </div>
@@ -14892,16 +14834,23 @@ div.jp-OutputPrompt {
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="tuple-&#33287;-list-&#26368;&#22823;&#30340;&#19981;&#21516;&#40670;&#65292;&#22312;&#26044;-tuple&#12300;&#19981;&#33021;&#22816;&#26356;&#26032;&#12301;&#30340;&#29305;&#24615;"><code>tuple</code> &#33287; <code>list</code> &#26368;&#22823;&#30340;&#19981;&#21516;&#40670;&#65292;&#22312;&#26044; <code>tuple</code>&#12300;&#19981;&#33021;&#22816;&#26356;&#26032;&#12301;&#30340;&#29305;&#24615;<a class="anchor-link" href="#tuple-&#33287;-list-&#26368;&#22823;&#30340;&#19981;&#21516;&#40670;&#65292;&#22312;&#26044;-tuple&#12300;&#19981;&#33021;&#22816;&#26356;&#26032;&#12301;&#30340;&#29305;&#24615;">&#182;</a></h2><p>透過 <code>TAB</code> 與 <code>SHIFT - TAB</code> 在 Jupyter 介面中查詢 <code>tuple</code> 是否具有更新的方法。</p>
+<h2 id="Pandas-&#25552;&#20379;&#19977;&#31278;&#26032;&#30340;&#36039;&#26009;&#32080;&#27083;">Pandas &#25552;&#20379;&#19977;&#31278;&#26032;&#30340;&#36039;&#26009;&#32080;&#27083;<a class="anchor-link" href="#Pandas-&#25552;&#20379;&#19977;&#31278;&#26032;&#30340;&#36039;&#26009;&#32080;&#27083;">&#182;</a></h2><ul>
+<li><code>DataFrame</code></li>
+<li><code>Series</code></li>
+<li><code>Index</code></li>
+</ul>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">primes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">13</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">daily_report</span><span class="p">))</span>              <span class="c1"># DataFrame</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">daily_report</span><span class="p">[</span><span class="s1">&#39;Confirmed&#39;</span><span class="p">]))</span> <span class="c1"># Series</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">daily_report</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>      <span class="c1"># Index</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">daily_report</span><span class="o">.</span><span class="n">index</span><span class="p">))</span>        <span class="c1"># Index</span>
 </pre></div>
 
      </div>
@@ -14920,14 +14869,12 @@ div.jp-OutputPrompt {
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-11-e44636e18ec3&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>primes<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">13</span>
-
-<span class="ansi-red-fg">TypeError</span>: &#39;tuple&#39; object does not support item assignment</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+&lt;class &#39;pandas.core.series.Series&#39;&gt;
+&lt;class &#39;pandas.core.indexes.base.Index&#39;&gt;
+&lt;class &#39;pandas.core.indexes.range.RangeIndex&#39;&gt;
+</pre>
 </div>
 </div>
 
@@ -14938,22 +14885,42 @@ div.jp-OutputPrompt {
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#22312;-Python-&#20013;&#26377;&#30526;&#22810;&#30340;&#25033;&#29992;&#22580;&#26223;&#26371;&#36973;&#36935;&#21040;-tuple">&#22312; Python &#20013;&#26377;&#30526;&#22810;&#30340;&#25033;&#29992;&#22580;&#26223;&#26371;&#36973;&#36935;&#21040; <code>tuple</code><a class="anchor-link" href="#&#22312;-Python-&#20013;&#26377;&#30526;&#22810;&#30340;&#25033;&#29992;&#22580;&#26223;&#26371;&#36973;&#36935;&#21040;-tuple">&#182;</a></h2><ul>
-<li>自行定義函數預設「多個輸出」的資料結構。</li>
-<li><code>dict</code> 的 <code>items()</code> 方法輸出。</li>
-<li>內建函數 <code>enumerate</code> 與 <code>zip</code> 的輸出。</li>
-<li>...等。</li>
+<h2 id="&#20351;&#29992;&#26356;&#30452;&#35258;&#30340;&#35264;&#24565;&#25805;&#20316;&#36039;&#26009;">&#20351;&#29992;&#26356;&#30452;&#35258;&#30340;&#35264;&#24565;&#25805;&#20316;&#36039;&#26009;<a class="anchor-link" href="#&#20351;&#29992;&#26356;&#30452;&#35258;&#30340;&#35264;&#24565;&#25805;&#20316;&#36039;&#26009;">&#182;</a></h2><ul>
+<li>如何定義「更直覺」？<ul>
+<li>像操作試算表一樣（Spreadsheet-like）。</li>
+<li>像使用資料庫一樣（SQL-like）。</li>
+</ul>
+</li>
 </ul>
 
 </div>
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="dict"><code>dict</code><a class="anchor-link" href="#dict">&#182;</a></h2><ul>
-<li><code>dict</code> 是一種使用「鍵值對應」關係（mappings of keys to values）的資料結構。</li>
-<li><code>dict</code> 可以透過「逗號」<code>,</code>、「鍵值對應」<code>key: value</code> 與「大括號」<code>{}</code> 宣告而成。</li>
+<h2 id="&#22522;&#30990;&#30340;&#36039;&#26009;&#26694;&#25805;&#20316;">&#22522;&#30990;&#30340;&#36039;&#26009;&#26694;&#25805;&#20316;<a class="anchor-link" href="#&#22522;&#30990;&#30340;&#36039;&#26009;&#26694;&#25805;&#20316;">&#182;</a></h2><ul>
+<li>衍生（mutate），新增欄位到資料框中，特別是新欄位與既有欄位具有函數的輸出以及輸入關係。</li>
+<li>選擇（select），從資料框中依據名稱挑出單個或多個欄位。</li>
+<li>篩選（filter），依據判斷條件（布林值）從資料框中挑出符合（布林值為 <code>True</code>）的觀測值。</li>
 </ul>
 
+</div>
+</div></section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="&#22522;&#30990;&#30340;&#36039;&#26009;&#26694;&#25805;&#20316;&#65288;&#32396;&#65289;">&#22522;&#30990;&#30340;&#36039;&#26009;&#26694;&#25805;&#20316;&#65288;&#32396;&#65289;<a class="anchor-link" href="#&#22522;&#30990;&#30340;&#36039;&#26009;&#26694;&#25805;&#20316;&#65288;&#32396;&#65289;">&#182;</a></h2><ul>
+<li>摘要（summarise），對欄位進行聚合（Aggregate）的運算將多筆觀測值總結。</li>
+<li>排序（arrange），對觀測值由小到大（遞增）或者由大到小（遞減）變動排列順序。</li>
+<li>分組（group by），將欄位依照獨一類別進行摘要。</li>
+</ul>
+
+</div>
+</div></section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="&#34893;&#29983;&#65288;mutate&#65289;">&#34893;&#29983;&#65288;mutate&#65289;<a class="anchor-link" href="#&#34893;&#29983;&#65288;mutate&#65289;">&#182;</a></h2><p>治療中案例數可以用既有的欄位計算而得，常見的定義為：確診數減去死亡數再減痊癒數。</p>
+\begin{equation}
+\text{Active} = \text{Confirmed} - \text{Deaths} - \text{Recovered}
+\end{equation}
 </div>
 </div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -14961,13 +14928,8 @@ div.jp-OutputPrompt {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">the_shawshank_redemption</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;The Shawshank Redemption&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="mi">1994</span><span class="p">,</span>
-    <span class="s1">&#39;rating&#39;</span><span class="p">:</span> <span class="mf">9.3</span><span class="p">,</span>
-    <span class="s1">&#39;director&#39;</span><span class="p">:</span> <span class="s1">&#39;Frank Darabont&#39;</span>
-<span class="p">}</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">the_shawshank_redemption</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">active</span> <span class="o">=</span> <span class="n">daily_report</span><span class="p">[</span><span class="s2">&quot;Confirmed&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">daily_report</span><span class="p">[</span><span class="s2">&quot;Deaths&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">daily_report</span><span class="p">[</span><span class="s2">&quot;Recovered&quot;</span><span class="p">]</span>
+<span class="n">active</span>
 </pre></div>
 
      </div>
@@ -14989,7 +14951,18 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>dict</pre>
+<pre>0        4934.0
+1       12222.0
+2       34356.0
+3         301.0
+4        3390.0
+         ...   
+3978      775.0
+3979    12008.0
+3980     2219.0
+3981      407.0
+3982      780.0
+Length: 3983, dtype: float64</pre>
 </div>
 
 </div>
@@ -15001,7 +14974,8 @@ div.jp-OutputPrompt {
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#20351;&#29992;&#20839;&#24314;&#20989;&#25976;-len--&#24471;&#30693;&#19968;&#20491;-dict-&#20013;&#26377;&#24190;&#32068;&#37749;&#20540;&#23565;&#25033;">&#20351;&#29992;&#20839;&#24314;&#20989;&#25976; <code>len</code>  &#24471;&#30693;&#19968;&#20491; <code>dict</code> &#20013;&#26377;&#24190;&#32068;&#37749;&#20540;&#23565;&#25033;<a class="anchor-link" href="#&#20351;&#29992;&#20839;&#24314;&#20989;&#25976;-len--&#24471;&#30693;&#19968;&#20491;-dict-&#20013;&#26377;&#24190;&#32068;&#37749;&#20540;&#23565;&#25033;">&#182;</a></h2>
+<h2 id="&#36984;&#25799;&#65288;select&#65289;">&#36984;&#25799;&#65288;select&#65289;<a class="anchor-link" href="#&#36984;&#25799;&#65288;select&#65289;">&#182;</a></h2><p>在中括號裡頭輸入欄位名稱可以將資料以 <code>Series</code> 外型從資料框中取出。</p>
+
 </div>
 </div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -15009,7 +14983,7 @@ div.jp-OutputPrompt {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">the_shawshank_redemption</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">daily_report</span><span class="p">[</span><span class="s2">&quot;Country_Region&quot;</span><span class="p">]</span>
 </pre></div>
 
      </div>
@@ -15031,7 +15005,18 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>4</pre>
+<pre>0              Afghanistan
+1                  Albania
+2                  Algeria
+3                  Andorra
+4                   Angola
+               ...        
+3978               Vietnam
+3979    West Bank and Gaza
+3980                 Yemen
+3981                Zambia
+3982              Zimbabwe
+Name: Country_Region, Length: 3983, dtype: object</pre>
 </div>
 
 </div>
@@ -15043,18 +15028,17 @@ div.jp-OutputPrompt {
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="dict-&#25505;&#29992;&#12300;&#20197;&#37749;&#21462;&#20540;&#12301;&#30340;&#32034;&#24341;&#27231;&#21046;"><code>dict</code> &#25505;&#29992;&#12300;&#20197;&#37749;&#21462;&#20540;&#12301;&#30340;&#32034;&#24341;&#27231;&#21046;<a class="anchor-link" href="#dict-&#25505;&#29992;&#12300;&#20197;&#37749;&#21462;&#20540;&#12301;&#30340;&#32034;&#24341;&#27231;&#21046;">&#182;</a></h2>
+<h2 id="&#36984;&#25799;&#65288;select&#65289;">&#36984;&#25799;&#65288;select&#65289;<a class="anchor-link" href="#&#36984;&#25799;&#65288;select&#65289;">&#182;</a></h2><p>若想要選擇多個欄位，將多個欄位名稱以 <code>list</code> 傳入中括號。</p>
+
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">the_shawshank_redemption</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">the_shawshank_redemption</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">the_shawshank_redemption</span><span class="p">[</span><span class="s1">&#39;rating&#39;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">the_shawshank_redemption</span><span class="p">[</span><span class="s1">&#39;director&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">multiple_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Country_Region&quot;</span><span class="p">,</span> <span class="s2">&quot;Confirmed&quot;</span><span class="p">,</span> <span class="s2">&quot;Deaths&quot;</span><span class="p">,</span> <span class="s2">&quot;Recovered&quot;</span><span class="p">]</span>
+<span class="n">daily_report</span><span class="p">[</span><span class="n">multiple_columns</span><span class="p">]</span>
 </pre></div>
 
      </div>
@@ -15070,16 +15054,119 @@ div.jp-OutputPrompt {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>The Shawshank Redemption
-1994
-9.3
-Frank Darabont
-</pre>
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Country_Region</th>
+      <th>Confirmed</th>
+      <th>Deaths</th>
+      <th>Recovered</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>61842</td>
+      <td>2686</td>
+      <td>54222.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Albania</td>
+      <td>131723</td>
+      <td>2412</td>
+      <td>117089.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Algeria</td>
+      <td>124104</td>
+      <td>3328</td>
+      <td>86420.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Andorra</td>
+      <td>13423</td>
+      <td>127</td>
+      <td>12995.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Angola</td>
+      <td>28740</td>
+      <td>633</td>
+      <td>24717.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>3978</th>
+      <td>Vietnam</td>
+      <td>3412</td>
+      <td>35</td>
+      <td>2602.0</td>
+    </tr>
+    <tr>
+      <th>3979</th>
+      <td>West Bank and Gaza</td>
+      <td>301751</td>
+      <td>3358</td>
+      <td>286385.0</td>
+    </tr>
+    <tr>
+      <th>3980</th>
+      <td>Yemen</td>
+      <td>6482</td>
+      <td>1271</td>
+      <td>2992.0</td>
+    </tr>
+    <tr>
+      <th>3981</th>
+      <td>Zambia</td>
+      <td>92092</td>
+      <td>1257</td>
+      <td>90428.0</td>
+    </tr>
+    <tr>
+      <th>3982</th>
+      <td>Zimbabwe</td>
+      <td>38419</td>
+      <td>1576</td>
+      <td>36063.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>3983 rows × 4 columns</p>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -15089,11 +15176,7 @@ Frank Darabont
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#29992;&#20358;&#27298;&#35222;-dict-&#30340;&#19977;&#20491;&#26041;&#27861;">&#29992;&#20358;&#27298;&#35222; <code>dict</code> &#30340;&#19977;&#20491;&#26041;&#27861;<a class="anchor-link" href="#&#29992;&#20358;&#27298;&#35222;-dict-&#30340;&#19977;&#20491;&#26041;&#27861;">&#182;</a></h2><ol>
-<li><code>.keys()</code> 檢視鍵。</li>
-<li><code>.values()</code> 檢視值。</li>
-<li><code>.items()</code> 檢視鍵值對應。</li>
-</ol>
+<h2 id="&#31721;&#36984;&#65288;filter&#65289;">&#31721;&#36984;&#65288;filter&#65289;<a class="anchor-link" href="#&#31721;&#36984;&#65288;filter&#65289;">&#182;</a></h2><p>在中括號裡頭輸入判斷條件所獲得的布林值 <code>Series</code> 可以獲得指定的觀測值。</p>
 
 </div>
 </div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15102,9 +15185,8 @@ Frank Darabont
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">the_shawshank_redemption</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">the_shawshank_redemption</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">the_shawshank_redemption</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">is_tw</span> <span class="o">=</span> <span class="n">daily_report</span><span class="p">[</span><span class="s1">&#39;Country_Region&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Taiwan*&#39;</span> <span class="c1"># 台灣在哪裡</span>
+<span class="n">is_tw</span>
 </pre></div>
 
      </div>
@@ -15120,34 +15202,39 @@ Frank Darabont
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>dict_keys([&#39;title&#39;, &#39;year&#39;, &#39;rating&#39;, &#39;director&#39;])
-dict_values([&#39;The Shawshank Redemption&#39;, 1994, 9.3, &#39;Frank Darabont&#39;])
-dict_items([(&#39;title&#39;, &#39;The Shawshank Redemption&#39;), (&#39;year&#39;, 1994), (&#39;rating&#39;, 9.3), (&#39;director&#39;, &#39;Frank Darabont&#39;)])
-</pre>
-</div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>0       False
+1       False
+2       False
+3       False
+4       False
+        ...  
+3978    False
+3979    False
+3980    False
+3981    False
+3982    False
+Name: Country_Region, Length: 3983, dtype: bool</pre>
 </div>
 
 </div>
 
 </div>
 
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#36879;&#36942;&#23459;&#21578;&#26032;&#22686;-dict-&#20013;&#30340;&#37749;&#20540;&#23565;&#25033;">&#36879;&#36942;&#23459;&#21578;&#26032;&#22686; <code>dict</code> &#20013;&#30340;&#37749;&#20540;&#23565;&#25033;<a class="anchor-link" href="#&#36879;&#36942;&#23459;&#21578;&#26032;&#22686;-dict-&#20013;&#30340;&#37749;&#20540;&#23565;&#25033;">&#182;</a></h2>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">the_shawshank_redemption</span><span class="p">[</span><span class="s1">&#39;lead_actors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Tim Robbins&#39;</span><span class="p">,</span> <span class="s1">&#39;Morgan Freeman&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">the_shawshank_redemption</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">daily_report</span><span class="p">[</span><span class="n">is_tw</span><span class="p">]</span> <span class="c1"># is_tw 是一個布林值 Series</span>
 </pre></div>
 
      </div>
@@ -15163,13 +15250,68 @@ dict_items([(&#39;title&#39;, &#39;The Shawshank Redemption&#39;), (&#39;year&#3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{&#39;title&#39;: &#39;The Shawshank Redemption&#39;, &#39;year&#39;: 1994, &#39;rating&#39;: 9.3, &#39;director&#39;: &#39;Frank Darabont&#39;, &#39;lead_actors&#39;: [&#39;Tim Robbins&#39;, &#39;Morgan Freeman&#39;]}
-</pre>
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>FIPS</th>
+      <th>Admin2</th>
+      <th>Province_State</th>
+      <th>Country_Region</th>
+      <th>Last_Update</th>
+      <th>Lat</th>
+      <th>Long_</th>
+      <th>Confirmed</th>
+      <th>Deaths</th>
+      <th>Recovered</th>
+      <th>Active</th>
+      <th>Combined_Key</th>
+      <th>Incident_Rate</th>
+      <th>Case_Fatality_Ratio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>643</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Taiwan*</td>
+      <td>2021-05-10 04:20:38</td>
+      <td>23.7</td>
+      <td>121.0</td>
+      <td>1184</td>
+      <td>12</td>
+      <td>1089.0</td>
+      <td>83.0</td>
+      <td>Taiwan*</td>
+      <td>4.971286</td>
+      <td>1.013514</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -15179,7 +15321,8 @@ dict_items([(&#39;title&#39;, &#39;The Shawshank Redemption&#39;), (&#39;year&#3
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#20351;&#29992;-del-&#20445;&#30041;&#23383;&#21034;&#38500;-dict-&#20013;&#30340;&#37749;&#20540;&#23565;&#25033;">&#20351;&#29992; <code>del</code> &#20445;&#30041;&#23383;&#21034;&#38500; <code>dict</code> &#20013;&#30340;&#37749;&#20540;&#23565;&#25033;<a class="anchor-link" href="#&#20351;&#29992;-del-&#20445;&#30041;&#23383;&#21034;&#38500;-dict-&#20013;&#30340;&#37749;&#20540;&#23565;&#25033;">&#182;</a></h2>
+<h2 id="&#25688;&#35201;&#65288;summarize&#65289;">&#25688;&#35201;&#65288;summarize&#65289;<a class="anchor-link" href="#&#25688;&#35201;&#65288;summarize&#65289;">&#182;</a></h2><p>對 <code>Series</code> 呼叫聚合方法，例如加總 <code>.sum()</code>。</p>
+
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -15187,8 +15330,7 @@ dict_items([(&#39;title&#39;, &#39;The Shawshank Redemption&#39;), (&#39;year&#3
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">del</span> <span class="n">the_shawshank_redemption</span><span class="p">[</span><span class="s1">&#39;lead_actors&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">the_shawshank_redemption</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">daily_report</span><span class="p">[</span><span class="s1">&#39;Confirmed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -15204,13 +15346,15 @@ dict_items([(&#39;title&#39;, &#39;The Shawshank Redemption&#39;), (&#39;year&#3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{&#39;title&#39;: &#39;The Shawshank Redemption&#39;, &#39;year&#39;: 1994, &#39;rating&#39;: 9.3, &#39;director&#39;: &#39;Frank Darabont&#39;}
-</pre>
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>158326318</pre>
 </div>
+
 </div>
 
 </div>
@@ -15220,22 +15364,16 @@ dict_items([(&#39;title&#39;, &#39;The Shawshank Redemption&#39;), (&#39;year&#3
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="set"><code>set</code><a class="anchor-link" href="#set">&#182;</a></h2><ul>
-<li><code>set</code> 是一種「無序」、儲存「獨一值」並且能夠進行「集合運算」的資料結構。</li>
-<li><code>set</code> 可以透過「逗號」<code>,</code> 與「大括號」<code>{}</code> 宣告而成。</li>
-</ul>
+<h2 id="&#20998;&#32068;&#65288;group-by&#65289;&#33287;&#25688;&#35201;&#65288;summarise&#65289;">&#20998;&#32068;&#65288;group by&#65289;&#33287;&#25688;&#35201;&#65288;summarise&#65289;<a class="anchor-link" href="#&#20998;&#32068;&#65288;group-by&#65289;&#33287;&#25688;&#35201;&#65288;summarise&#65289;">&#182;</a></h2><p>以國家為分組層級，所以在 <code>groupby()</code> 方法中傳入 Country_Region 欄位，獲得一個 <code>DataFrameGroupBy</code> 類別。</p>
 
 </div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">primes</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">}</span> <span class="c1"># 11 is duplicated</span>
-<span class="n">odds</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">}</span>     <span class="c1"># 9 is duplicated</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">primes</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">odds</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">daily_report</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Country_Region&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15251,14 +15389,15 @@ dict_items([(&#39;title&#39;, &#39;The Shawshank Redemption&#39;), (&#39;year&#3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&lt;class &#39;set&#39;&gt;
-&lt;class &#39;set&#39;&gt;
-</pre>
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7ff1176a9438&gt;</pre>
 </div>
+
 </div>
 
 </div>
@@ -15268,16 +15407,16 @@ dict_items([(&#39;title&#39;, &#39;The Shawshank Redemption&#39;), (&#39;year&#3
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#20351;&#29992;&#20839;&#24314;&#20989;&#25976;-len--&#24471;&#30693;&#19968;&#20491;-set-&#20013;&#26377;&#24190;&#20491;&#29544;&#19968;&#20540;">&#20351;&#29992;&#20839;&#24314;&#20989;&#25976; <code>len</code>  &#24471;&#30693;&#19968;&#20491; <code>set</code> &#20013;&#26377;&#24190;&#20491;&#29544;&#19968;&#20540;<a class="anchor-link" href="#&#20351;&#29992;&#20839;&#24314;&#20989;&#25976;-len--&#24471;&#30693;&#19968;&#20491;-set-&#20013;&#26377;&#24190;&#20491;&#29544;&#19968;&#20540;">&#182;</a></h2>
+<h2 id="&#20998;&#32068;&#65288;group-by&#65289;&#33287;&#25688;&#35201;&#65288;summarise&#65289;">&#20998;&#32068;&#65288;group by&#65289;&#33287;&#25688;&#35201;&#65288;summarise&#65289;<a class="anchor-link" href="#&#20998;&#32068;&#65288;group-by&#65289;&#33287;&#25688;&#35201;&#65288;summarise&#65289;">&#182;</a></h2><p>指定 <code>DataFrameGroupBy</code> 類別的欄位與聚合函數，獲得分組摘要的結果，是一個 <code>Series</code>。</p>
+
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">primes</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">odds</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">daily_report</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Country_Region&quot;</span><span class="p">)[</span><span class="s1">&#39;Confirmed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -15293,14 +15432,27 @@ dict_items([(&#39;title&#39;, &#39;The Shawshank Redemption&#39;), (&#39;year&#3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>5
-5
-</pre>
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>Country_Region
+Afghanistan            61842
+Albania               131723
+Algeria               124104
+Andorra                13423
+Angola                 28740
+                       ...  
+Vietnam                 3412
+West Bank and Gaza    301751
+Yemen                   6482
+Zambia                 92092
+Zimbabwe               38419
+Name: Confirmed, Length: 192, dtype: int64</pre>
 </div>
+
 </div>
 
 </div>
@@ -15310,60 +15462,88 @@ dict_items([(&#39;title&#39;, &#39;The Shawshank Redemption&#39;), (&#39;year&#3
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="set-&#26368;&#37325;&#35201;&#30340;&#29305;&#24615;&#26159;&#25903;&#25588;&#12300;&#38598;&#21512;&#36939;&#31639;&#12301;"><code>set</code> &#26368;&#37325;&#35201;&#30340;&#29305;&#24615;&#26159;&#25903;&#25588;&#12300;&#38598;&#21512;&#36939;&#31639;&#12301;<a class="anchor-link" href="#set-&#26368;&#37325;&#35201;&#30340;&#29305;&#24615;&#26159;&#25903;&#25588;&#12300;&#38598;&#21512;&#36939;&#31639;&#12301;">&#182;</a></h2><ul>
-<li>交集：使用 <code>&amp;</code> 或者 <code>.intersection()</code> 方法。</li>
-<li>聯集：使用 <code>|</code> 或者 <code>.union()</code> 方法。</li>
-<li>差集：使用 <code>-</code> 或者 <code>.difference()</code> 方法。</li>
-<li>對稱差集：使用 <code>^</code> 或者 <code>.symmetric_difference()</code> 方法。</li>
+<h2 id="&#25490;&#24207;&#65288;arrange&#65289;">&#25490;&#24207;&#65288;arrange&#65289;<a class="anchor-link" href="#&#25490;&#24207;&#65288;arrange&#65289;">&#182;</a></h2><p>呼叫 <code>Series</code> 的 <code>sort_values(ascending=False)</code> 方法將摘要結果由大到小遞減排序。</p>
+
+</div>
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">confirmed_by_country</span> <span class="o">=</span> <span class="n">daily_report</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Country_Region&quot;</span><span class="p">)[</span><span class="s1">&#39;Confirmed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">confirmed_by_country</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)[:</span><span class="mi">10</span><span class="p">]</span> <span class="c1"># 顯示確診人數前 10 高的國家</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>Country_Region
+US                32707750
+India             22662575
+Brazil            15184790
+France             5838294
+Turkey             5031332
+Russia             4824621
+United Kingdom     4450578
+Italy              4111210
+Spain              3567408
+Germany            3530887
+Name: Confirmed, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div></section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="&#38500;&#20102;&#22522;&#30990;&#25805;&#20316;&#65292;Pandas-&#36996;&#33021;&#22816;&#36914;&#34892;">&#38500;&#20102;&#22522;&#30990;&#25805;&#20316;&#65292;Pandas &#36996;&#33021;&#22816;&#36914;&#34892;<a class="anchor-link" href="#&#38500;&#20102;&#22522;&#30990;&#25805;&#20316;&#65292;Pandas-&#36996;&#33021;&#22816;&#36914;&#34892;">&#182;</a></h2><ul>
+<li>網頁表格內容載入</li>
+<li>關聯式資料庫操作</li>
+<li>視覺化</li>
+<li>...etc.</li>
+</ul>
+
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="&#20351;&#29992;-Pandas-&#34389;&#29702;&#26657;&#22806;&#20844;&#38283;&#36039;&#35338;">&#20351;&#29992; Pandas &#34389;&#29702;&#26657;&#22806;&#20844;&#38283;&#36039;&#35338;<a class="anchor-link" href="#&#20351;&#29992;-Pandas-&#34389;&#29702;&#26657;&#22806;&#20844;&#38283;&#36039;&#35338;">&#182;</a></h2>
+</div>
+</div></section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="&#26657;&#22806;&#20844;&#38283;&#36039;&#35338;&#27284;&#26696;&#26684;&#24335;">&#26657;&#22806;&#20844;&#38283;&#36039;&#35338;&#27284;&#26696;&#26684;&#24335;<a class="anchor-link" href="#&#26657;&#22806;&#20844;&#38283;&#36039;&#35338;&#27284;&#26696;&#26684;&#24335;">&#182;</a></h2><ul>
+<li><code>.xlsx</code></li>
+<li><code>.csv</code></li>
+<li><code>.pdf</code></li>
 </ul>
 
 </div>
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#20351;&#29992;-&amp;-&#25110;&#32773;-.intersection()-&#26041;&#27861;">&#20351;&#29992; <code>&amp;</code> &#25110;&#32773; <code>.intersection()</code> &#26041;&#27861;<a class="anchor-link" href="#&#20351;&#29992;-&amp;-&#25110;&#32773;-.intersection()-&#26041;&#27861;">&#182;</a></h2>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">primes</span> <span class="o">&amp;</span> <span class="n">odds</span><span class="p">)</span>             <span class="c1"># with an operator</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">primes</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">odds</span><span class="p">))</span> <span class="c1"># equivalently with a method</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{3, 5, 7}
-{3, 5, 7}
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#20351;&#29992;-|-&#25110;&#32773;-.union()-&#26041;&#27861;">&#20351;&#29992; <code>|</code> &#25110;&#32773; <code>.union()</code> &#26041;&#27861;<a class="anchor-link" href="#&#20351;&#29992;-|-&#25110;&#32773;-.union()-&#26041;&#27861;">&#182;</a></h2>
+<h2 id="&#20351;&#29992;-read_excel-&#20989;&#25976;&#36617;&#20837;-.xlsx">&#20351;&#29992; <code>read_excel</code> &#20989;&#25976;&#36617;&#20837; <code>.xlsx</code><a class="anchor-link" href="#&#20351;&#29992;-read_excel-&#20989;&#25976;&#36617;&#20837;-.xlsx">&#182;</a></h2>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -15371,8 +15551,8 @@ dict_items([(&#39;title&#39;, &#39;The Shawshank Redemption&#39;), (&#39;year&#3
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">primes</span> <span class="o">|</span> <span class="n">odds</span><span class="p">)</span>      <span class="c1"># with an operator</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">primes</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">odds</span><span class="p">))</span> <span class="c1"># equivalently with a method</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">xlsx_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;學1-1.正式學籍在學學生人數-以「系(所)」統計.xlsx&#39;</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">xlsx_df</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15388,14 +15568,15 @@ dict_items([(&#39;title&#39;, &#39;The Shawshank Redemption&#39;), (&#39;year&#3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{1, 2, 3, 5, 7, 9, 11}
-{1, 2, 3, 5, 7, 9, 11}
-</pre>
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>pandas.core.frame.DataFrame</pre>
 </div>
+
 </div>
 
 </div>
@@ -15405,7 +15586,7 @@ dict_items([(&#39;title&#39;, &#39;The Shawshank Redemption&#39;), (&#39;year&#3
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#20351;&#29992;---&#25110;&#32773;-.difference()-&#26041;&#27861;">&#20351;&#29992; <code>-</code> &#25110;&#32773; <code>.difference()</code> &#26041;&#27861;<a class="anchor-link" href="#&#20351;&#29992;---&#25110;&#32773;-.difference()-&#26041;&#27861;">&#182;</a></h2>
+<h2 id="&#20351;&#29992;-read_csv-&#20989;&#25976;&#36617;&#20837;-.csv">&#20351;&#29992; <code>read_csv</code> &#20989;&#25976;&#36617;&#20837; <code>.csv</code><a class="anchor-link" href="#&#20351;&#29992;-read_csv-&#20989;&#25976;&#36617;&#20837;-.csv">&#182;</a></h2>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -15413,10 +15594,8 @@ dict_items([(&#39;title&#39;, &#39;The Shawshank Redemption&#39;), (&#39;year&#3
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">primes</span> <span class="o">-</span> <span class="n">odds</span><span class="p">)</span>           <span class="c1"># with an operator</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">primes</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">odds</span><span class="p">))</span> <span class="c1"># equivalently with a method</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">odds</span> <span class="o">-</span> <span class="n">primes</span><span class="p">)</span>           <span class="c1"># with an operator</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">odds</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">primes</span><span class="p">))</span> <span class="c1"># equivalently with a method</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">csv_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;學1-1.正式學籍在學學生人數-以「系(所)」統計.csv&#39;</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">csv_df</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15432,16 +15611,15 @@ dict_items([(&#39;title&#39;, &#39;The Shawshank Redemption&#39;), (&#39;year&#3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{2, 11}
-{2, 11}
-{1, 9}
-{1, 9}
-</pre>
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>pandas.core.frame.DataFrame</pre>
 </div>
+
 </div>
 
 </div>
@@ -15451,7 +15629,7 @@ dict_items([(&#39;title&#39;, &#39;The Shawshank Redemption&#39;), (&#39;year&#3
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#20351;&#29992;-^-&#25110;&#32773;-.symmetric_difference()-&#26041;&#27861;">&#20351;&#29992; <code>^</code> &#25110;&#32773; <code>.symmetric_difference()</code> &#26041;&#27861;<a class="anchor-link" href="#&#20351;&#29992;-^-&#25110;&#32773;-.symmetric_difference()-&#26041;&#27861;">&#182;</a></h2>
+<h2 id="&#20351;&#29992;-tabula.read_pdf-&#20989;&#25976;&#36617;&#20837;-.pdf">&#20351;&#29992; <code>tabula.read_pdf</code> &#20989;&#25976;&#36617;&#20837; <code>.pdf</code><a class="anchor-link" href="#&#20351;&#29992;-tabula.read_pdf-&#20989;&#25976;&#36617;&#20837;-.pdf">&#182;</a></h2>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -15459,8 +15637,10 @@ dict_items([(&#39;title&#39;, &#39;The Shawshank Redemption&#39;), (&#39;year&#3
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">primes</span> <span class="o">^</span> <span class="n">odds</span><span class="p">)</span>                      <span class="c1"># with an operator</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">primes</span><span class="o">.</span><span class="n">symmetric_difference</span><span class="p">(</span><span class="n">odds</span><span class="p">))</span>  <span class="c1"># equivalently with a method</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tabula</span>
+
+<span class="n">pdf_df_list</span> <span class="o">=</span> <span class="n">tabula</span><span class="o">.</span><span class="n">read_pdf</span><span class="p">(</span><span class="s1">&#39;1092-1.pdf&#39;</span><span class="p">,</span> <span class="n">pages</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+<span class="n">pdf_df</span> <span class="o">=</span> <span class="n">pdf_df_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 
      </div>
@@ -15479,9 +15659,20 @@ dict_items([(&#39;title&#39;, &#39;The Shawshank Redemption&#39;), (&#39;year&#3
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{1, 2, 9, 11}
-{1, 2, 9, 11}
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>Got stderr: May 10, 2021 11:34:07 PM org.apache.pdfbox.rendering.PDFRenderer suggestKCMS
+INFO: Your current java version is: 1.8.0_152
+May 10, 2021 11:34:07 PM org.apache.pdfbox.rendering.PDFRenderer suggestKCMS
+INFO: To get higher rendering speed on old java 1.8 or 9 versions,
+May 10, 2021 11:34:07 PM org.apache.pdfbox.rendering.PDFRenderer suggestKCMS
+INFO:   update to the latest 1.8 or 9 version (&gt;= 1.8.0_191 or &gt;= 9.0.4),
+May 10, 2021 11:34:07 PM org.apache.pdfbox.rendering.PDFRenderer suggestKCMS
+INFO:   or
+May 10, 2021 11:34:07 PM org.apache.pdfbox.rendering.PDFRenderer suggestKCMS
+INFO:   use the option -Dsun.java2d.cmm=sun.java2d.cmm.kcms.KcmsServiceProvider
+May 10, 2021 11:34:07 PM org.apache.pdfbox.rendering.PDFRenderer suggestKCMS
+INFO:   or call System.setProperty(&#34;sun.java2d.cmm&#34;, &#34;sun.java2d.cmm.kcms.KcmsServiceProvider&#34;)
+
 </pre>
 </div>
 </div>
@@ -15490,66 +15681,13 @@ dict_items([(&#39;title&#39;, &#39;The Shawshank Redemption&#39;), (&#39;year&#3
 
 </div>
 
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Python-&#36039;&#26009;&#32080;&#27083;&#26368;&#20855;&#23041;&#21147;&#30340;&#29305;&#24615;&#26159;&#12300;&#35079;&#21512;&#24615;&#12301;">Python &#36039;&#26009;&#32080;&#27083;&#26368;&#20855;&#23041;&#21147;&#30340;&#29305;&#24615;&#26159;&#12300;&#35079;&#21512;&#24615;&#12301;<a class="anchor-link" href="#Python-&#36039;&#26009;&#32080;&#27083;&#26368;&#20855;&#23041;&#21147;&#30340;&#29305;&#24615;&#26159;&#12300;&#35079;&#21512;&#24615;&#12301;">&#182;</a></h2><p>複合性的意思是資料結構中能夠儲存異質的資料類型與包含不同的資料結構。</p>
-<ul>
-<li>資料類型：<code>int</code>/<code>float</code>/<code>str</code>/<code>bool</code>/<code>NoneType</code></li>
-<li>資料結構：<code>list</code>/<code>tuple</code>/<code>dict</code>/<code>set</code> </li>
-</ul>
-
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#36617;&#20837;&#36039;&#26009;">&#36617;&#20837;&#36039;&#26009;<a class="anchor-link" href="#&#36617;&#20837;&#36039;&#26009;">&#182;</a></h2>
-</div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#25130;&#33267;&#30446;&#21069;&#28858;&#27490;&#65292;&#25105;&#20497;&#36879;&#36942;&#25163;&#21205;&#36664;&#20837;&#24314;&#31435;&#36039;&#26009;">&#25130;&#33267;&#30446;&#21069;&#28858;&#27490;&#65292;&#25105;&#20497;&#36879;&#36942;&#25163;&#21205;&#36664;&#20837;&#24314;&#31435;&#36039;&#26009;<a class="anchor-link" href="#&#25130;&#33267;&#30446;&#21069;&#28858;&#27490;&#65292;&#25105;&#20497;&#36879;&#36942;&#25163;&#21205;&#36664;&#20837;&#24314;&#31435;&#36039;&#26009;">&#182;</a></h2><p>常見的應用情境是透過「載入資料」成為資料結構進行資料處理與後續分析。</p>
-
-</div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#24120;&#35211;&#36039;&#26009;&#26684;&#24335;">&#24120;&#35211;&#36039;&#26009;&#26684;&#24335;<a class="anchor-link" href="#&#24120;&#35211;&#36039;&#26009;&#26684;&#24335;">&#182;</a></h2><ul>
-<li>無結構的文字資料（Non-structured texts）。</li>
-<li>JSON(<strong>J</strong>ava<strong>S</strong>cript <strong>O</strong>bject <strong>N</strong>otations)。</li>
-<li>表格形式資料（Tabular data）。</li>
-</ul>
-
-</div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#28961;&#32080;&#27083;&#30340;&#25991;&#23383;&#36039;&#26009;">&#28961;&#32080;&#27083;&#30340;&#25991;&#23383;&#36039;&#26009;<a class="anchor-link" href="#&#28961;&#32080;&#27083;&#30340;&#25991;&#23383;&#36039;&#26009;">&#182;</a></h2><p><code>the_shawshank_redemption_storyline.txt</code></p>
-
-<pre><code>Chronicles the experiences of a formerly successful banker as a prisoner in the gloomy jailhouse of Shawshank after being found guilty of a crime he did not commit.
-The film portrays the man's unique way of dealing with his new, torturous life; along the way he befriends a number of fellow prisoners, most notably a wise long-term inmate named Red.</code></pre>
-
-</div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#36617;&#20837;&#28961;&#32080;&#27083;&#30340;&#25991;&#23383;&#36039;&#26009;">&#36617;&#20837;&#28961;&#32080;&#27083;&#30340;&#25991;&#23383;&#36039;&#26009;<a class="anchor-link" href="#&#36617;&#20837;&#28961;&#32080;&#27083;&#30340;&#25991;&#23383;&#36039;&#26009;">&#182;</a></h2><ul>
-<li>透過內建函數 <code>open</code> 建立一個 <code>TextIOWrapper</code>。</li>
-<li>以 <code>TextIOWrapper</code> 的 <code>readlines</code> 方法將文字分行載入至 <code>list</code>。</li>
-</ul>
-
-</div>
 </div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;the_shawshank_redemption_storyline.txt&#39;</span><span class="p">)</span>
-<span class="n">storyline</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">storyline</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">storyline</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">pdf_df</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15565,14 +15703,15 @@ The film portrays the man's unique way of dealing with his new, torturous life; 
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&lt;class &#39;list&#39;&gt;
-[&#39;Chronicles the experiences of a formerly successful banker as a prisoner in the gloomy jailhouse of Shawshank after being found guilty of a crime he did not commit.\n&#39;, &#34;The film portrays the man&#39;s unique way of dealing with his new, torturous life; along the way he befriends a number of fellow prisoners, most notably a wise long-term inmate named Red.&#34;]
-</pre>
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>pandas.core.frame.DataFrame</pre>
 </div>
+
 </div>
 
 </div>
@@ -15582,8 +15721,7 @@ The film portrays the man's unique way of dealing with his new, torturous life; 
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#22914;&#26524;&#25812;&#24515;&#24536;&#35352;&#38364;&#38281;&#27284;&#26696;&#36896;&#25104;&#38750;&#38928;&#26399;&#30340;&#37679;&#35492;&#65292;&#21487;&#20197;&#20351;&#29992;-with-&#20445;&#30041;&#23383;">&#22914;&#26524;&#25812;&#24515;&#24536;&#35352;&#38364;&#38281;&#27284;&#26696;&#36896;&#25104;&#38750;&#38928;&#26399;&#30340;&#37679;&#35492;&#65292;&#21487;&#20197;&#20351;&#29992; <code>with</code> &#20445;&#30041;&#23383;<a class="anchor-link" href="#&#22914;&#26524;&#25812;&#24515;&#24536;&#35352;&#38364;&#38281;&#27284;&#26696;&#36896;&#25104;&#38750;&#38928;&#26399;&#30340;&#37679;&#35492;&#65292;&#21487;&#20197;&#20351;&#29992;-with-&#20445;&#30041;&#23383;">&#182;</a></h2><p>透過 <code>with</code> 可以確保檔案在縮排的區塊中使用完後會自動關閉。</p>
-
+<h2 id="&#20351;&#29992;-Pandas-&#28165;&#29702;&#33287;&#36681;&#25563;&#36617;&#20837;&#36039;&#26009;&#65292;&#20197;-.xlsx-&#28858;&#20363;">&#20351;&#29992; Pandas &#28165;&#29702;&#33287;&#36681;&#25563;&#36617;&#20837;&#36039;&#26009;&#65292;&#20197; <code>.xlsx</code> &#28858;&#20363;<a class="anchor-link" href="#&#20351;&#29992;-Pandas-&#28165;&#29702;&#33287;&#36681;&#25563;&#36617;&#20837;&#36039;&#26009;&#65292;&#20197;-.xlsx-&#28858;&#20363;">&#182;</a></h2>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -15591,10 +15729,8 @@ The film portrays the man's unique way of dealing with his new, torturous life; 
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;the_shawshank_redemption_storyline.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-    <span class="n">storyline</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">storyline</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">storyline</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">xlsx_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;學1-1.正式學籍在學學生人數-以「系(所)」統計.xlsx&#39;</span><span class="p">,</span>  <span class="n">skiprows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">skipfooter</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">xlsx_df</span>
 </pre></div>
 
      </div>
@@ -15610,14 +15746,203 @@ The film portrays the man's unique way of dealing with his new, torturous life; 
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&lt;class &#39;list&#39;&gt;
-[&#39;Chronicles the experiences of a formerly successful banker as a prisoner in the gloomy jailhouse of Shawshank after being found guilty of a crime he did not commit.\n&#39;, &#34;The film portrays the man&#39;s unique way of dealing with his new, torturous life; along the way he befriends a number of fellow prisoners, most notably a wise long-term inmate named Red.&#34;]
-</pre>
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>學年度</th>
+      <th>設立別</th>
+      <th>學校類別</th>
+      <th>學校統計處代碼</th>
+      <th>學校名稱</th>
+      <th>系所代碼</th>
+      <th>系所名稱</th>
+      <th>學制班別</th>
+      <th>在學學生數小計</th>
+      <th>在學學生數男</th>
+      <th>在學學生數女</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>2151001</td>
+      <td>音樂學系</td>
+      <td>學士班(日間)</td>
+      <td>256</td>
+      <td>69</td>
+      <td>187</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>2151001</td>
+      <td>音樂學系</td>
+      <td>碩士班(日間)</td>
+      <td>51</td>
+      <td>12</td>
+      <td>39</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>2151001</td>
+      <td>音樂學系</td>
+      <td>碩士在職專班</td>
+      <td>8</td>
+      <td>3</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>2221006</td>
+      <td>歷史學系</td>
+      <td>學士班(日間)</td>
+      <td>249</td>
+      <td>135</td>
+      <td>114</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>2221006</td>
+      <td>歷史學系</td>
+      <td>碩士班(日間)</td>
+      <td>13</td>
+      <td>7</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>67</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>6131028</td>
+      <td>資訊管理學系</td>
+      <td>學士班(日間)</td>
+      <td>499</td>
+      <td>280</td>
+      <td>219</td>
+    </tr>
+    <tr>
+      <th>68</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>6131028</td>
+      <td>資訊管理學系</td>
+      <td>碩士班(日間)</td>
+      <td>30</td>
+      <td>15</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>69</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>6131028</td>
+      <td>資訊管理學系</td>
+      <td>碩士在職專班</td>
+      <td>44</td>
+      <td>33</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>9231030</td>
+      <td>社會工作學系</td>
+      <td>學士班(日間)</td>
+      <td>549</td>
+      <td>163</td>
+      <td>386</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>9231030</td>
+      <td>社會工作學系</td>
+      <td>碩士班(日間)</td>
+      <td>69</td>
+      <td>16</td>
+      <td>53</td>
+    </tr>
+  </tbody>
+</table>
+<p>72 rows × 11 columns</p>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -15627,45 +15952,18 @@ The film portrays the man's unique way of dealing with his new, torturous life; 
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#20160;&#40636;&#26159;-JSON">&#20160;&#40636;&#26159; JSON<a class="anchor-link" href="#&#20160;&#40636;&#26159;-JSON">&#182;</a></h2><blockquote><p>JSON (JavaScript Object Notation) 是一種輕量的資料交換格式，由兩種結構組合而成：一是具有鍵值對應關係的資料結構，在不同的程式語言中可能被稱為 object、record、struct、<strong>dictionary</strong>、hash table、keyed list 或者 associative array。二是有序清單的資料結構，在不同的程式語言中可能被稱為 array、vector、<strong>list</strong> 或者 sequence。</p>
-</blockquote>
-<p>Source: <a href="https://www.json.org/json-en.html">https://www.json.org/json-en.html</a></p>
-
+<h2 id="&#35519;&#25972;&#36039;&#26009;&#22806;&#22411;">&#35519;&#25972;&#36039;&#26009;&#22806;&#22411;<a class="anchor-link" href="#&#35519;&#25972;&#36039;&#26009;&#22806;&#22411;">&#182;</a></h2>
 </div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="JSON">JSON<a class="anchor-link" href="#JSON">&#182;</a></h2><p><code>the_shawshank_redemption.json</code></p>
-
-<pre><code>{
-    "title": "The Shawshank Redemption",
-    "year": 1994,
-    "rating": 9.3,
-    "director": "Frank Darabont"
-}</code></pre>
-
-</div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#36617;&#20837;-JSON">&#36617;&#20837; JSON<a class="anchor-link" href="#&#36617;&#20837;-JSON">&#182;</a></h2><ul>
-<li>透過內建函數 <code>open</code> 建立一個 <code>TextIOWrapper</code>。</li>
-<li>以 <code>json</code> 套件的 <code>load</code> 函數將 JSON 載入。</li>
-</ul>
-
-</div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;the_shawshank_redemption.json&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-    <span class="n">the_shawshank_redemption</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">the_shawshank_redemption</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">the_shawshank_redemption</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">xlsx_df</span> <span class="o">=</span> <span class="n">xlsx_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;在學學生數小計&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">id_variables</span> <span class="o">=</span> <span class="n">xlsx_df</span><span class="o">.</span><span class="n">columns</span><span class="p">[:</span><span class="mi">8</span><span class="p">]</span>
+<span class="n">xlsx_df_long</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">xlsx_df</span><span class="p">,</span> <span class="n">id_vars</span><span class="o">=</span><span class="n">id_variables</span><span class="p">,</span> <span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;性別&#39;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;在學學生數&#39;</span><span class="p">)</span>
+<span class="n">xlsx_df_long</span>
 </pre></div>
 
      </div>
@@ -15681,14 +15979,191 @@ The film portrays the man's unique way of dealing with his new, torturous life; 
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&lt;class &#39;dict&#39;&gt;
-{&#39;title&#39;: &#39;The Shawshank Redemption&#39;, &#39;year&#39;: 1994, &#39;rating&#39;: 9.3, &#39;director&#39;: &#39;Frank Darabont&#39;}
-</pre>
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>學年度</th>
+      <th>設立別</th>
+      <th>學校類別</th>
+      <th>學校統計處代碼</th>
+      <th>學校名稱</th>
+      <th>系所代碼</th>
+      <th>系所名稱</th>
+      <th>學制班別</th>
+      <th>性別</th>
+      <th>在學學生數</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>2151001</td>
+      <td>音樂學系</td>
+      <td>學士班(日間)</td>
+      <td>在學學生數男</td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>2151001</td>
+      <td>音樂學系</td>
+      <td>碩士班(日間)</td>
+      <td>在學學生數男</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>2151001</td>
+      <td>音樂學系</td>
+      <td>碩士在職專班</td>
+      <td>在學學生數男</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>2221006</td>
+      <td>歷史學系</td>
+      <td>學士班(日間)</td>
+      <td>在學學生數男</td>
+      <td>135</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>2221006</td>
+      <td>歷史學系</td>
+      <td>碩士班(日間)</td>
+      <td>在學學生數男</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>139</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>6131028</td>
+      <td>資訊管理學系</td>
+      <td>學士班(日間)</td>
+      <td>在學學生數女</td>
+      <td>219</td>
+    </tr>
+    <tr>
+      <th>140</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>6131028</td>
+      <td>資訊管理學系</td>
+      <td>碩士班(日間)</td>
+      <td>在學學生數女</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>141</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>6131028</td>
+      <td>資訊管理學系</td>
+      <td>碩士在職專班</td>
+      <td>在學學生數女</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>142</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>9231030</td>
+      <td>社會工作學系</td>
+      <td>學士班(日間)</td>
+      <td>在學學生數女</td>
+      <td>386</td>
+    </tr>
+    <tr>
+      <th>143</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>9231030</td>
+      <td>社會工作學系</td>
+      <td>碩士班(日間)</td>
+      <td>在學學生數女</td>
+      <td>53</td>
+    </tr>
+  </tbody>
+</table>
+<p>144 rows × 10 columns</p>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -15698,114 +16173,22 @@ The film portrays the man's unique way of dealing with his new, torturous life; 
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#20160;&#40636;&#26159;&#34920;&#26684;&#24418;&#24335;&#36039;&#26009;">&#20160;&#40636;&#26159;&#34920;&#26684;&#24418;&#24335;&#36039;&#26009;<a class="anchor-link" href="#&#20160;&#40636;&#26159;&#34920;&#26684;&#24418;&#24335;&#36039;&#26009;">&#182;</a></h2><blockquote><p>表格形式資料是由列（rows）與欄（columns）所構成的有序資料集合，其中欄位通常採用名稱來標記、列則通常採用整數索引標記，每一列與每一欄的交匯處則稱之為儲存格（cells）。</p>
-</blockquote>
-<p>Source: <a href="https://en.wikipedia.org/wiki/Table_(information)">https://en.wikipedia.org/wiki/Table_(information)</a></p>
-
+<h2 id="&#23565;&#25033;&#24615;&#21029;">&#23565;&#25033;&#24615;&#21029;<a class="anchor-link" href="#&#23565;&#25033;&#24615;&#21029;">&#182;</a></h2>
 </div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#24120;&#35211;&#30340;&#34920;&#26684;&#24418;&#24335;&#36039;&#26009;">&#24120;&#35211;&#30340;&#34920;&#26684;&#24418;&#24335;&#36039;&#26009;<a class="anchor-link" href="#&#24120;&#35211;&#30340;&#34920;&#26684;&#24418;&#24335;&#36039;&#26009;">&#182;</a></h2><ul>
-<li>CSV(Comma Separated Values)</li>
-<li>試算表</li>
-<li>儲存於資料庫中的資料表</li>
-</ul>
-
-</div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#22312;&#23416;&#32722;&#31532;&#19977;&#26041;&#22871;&#20214;-pandas-&#30340;&#26178;&#20505;&#65292;&#26371;&#20171;&#32057;&#20854;&#20013;&#29992;&#20358;&#36617;&#20837;&#34920;&#26684;&#24418;&#24335;&#36039;&#26009;&#30340;&#20989;&#25976;">&#22312;&#23416;&#32722;&#31532;&#19977;&#26041;&#22871;&#20214; <code>pandas</code> &#30340;&#26178;&#20505;&#65292;&#26371;&#20171;&#32057;&#20854;&#20013;&#29992;&#20358;&#36617;&#20837;&#34920;&#26684;&#24418;&#24335;&#36039;&#26009;&#30340;&#20989;&#25976;<a class="anchor-link" href="#&#22312;&#23416;&#32722;&#31532;&#19977;&#26041;&#22871;&#20214;-pandas-&#30340;&#26178;&#20505;&#65292;&#26371;&#20171;&#32057;&#20854;&#20013;&#29992;&#20358;&#36617;&#20837;&#34920;&#26684;&#24418;&#24335;&#36039;&#26009;&#30340;&#20989;&#25976;">&#182;</a></h2><p><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html">https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html</a></p>
-
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#27969;&#31243;&#25511;&#21046;">&#27969;&#31243;&#25511;&#21046;<a class="anchor-link" href="#&#27969;&#31243;&#25511;&#21046;">&#182;</a></h2>
-</div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#20160;&#40636;&#26159;&#27969;&#31243;&#25511;&#21046;">&#20160;&#40636;&#26159;&#27969;&#31243;&#25511;&#21046;<a class="anchor-link" href="#&#20160;&#40636;&#26159;&#27969;&#31243;&#25511;&#21046;">&#182;</a></h2><blockquote><p>在程式執行時，特定區塊的程式碼執行的依據、重複次數以及先後順序等，像是特定條件成立的時候執行一段程式或者重複執行一段程式直到特定條件成立為止。</p>
-</blockquote>
-<p>Source: <a href="https://en.wikipedia.org/wiki/Control_flow">https://en.wikipedia.org/wiki/Control_flow</a></p>
-
-</div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#24120;&#35211;&#30340;&#27969;&#31243;&#25511;&#21046;">&#24120;&#35211;&#30340;&#27969;&#31243;&#25511;&#21046;<a class="anchor-link" href="#&#24120;&#35211;&#30340;&#27969;&#31243;&#25511;&#21046;">&#182;</a></h2><ul>
-<li>條件判斷</li>
-<li>迴圈<ul>
-<li><code>while</code> 迴圈</li>
-<li><code>for</code> 迴圈</li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#20160;&#40636;&#26159;&#26781;&#20214;&#21028;&#26039;">&#20160;&#40636;&#26159;&#26781;&#20214;&#21028;&#26039;<a class="anchor-link" href="#&#20160;&#40636;&#26159;&#26781;&#20214;&#21028;&#26039;">&#182;</a></h2><blockquote><p>條件判斷是依指定變數或者運算的布林值為真或假時，來決定是否執行一段位於某區塊內的程式，透過 <code>if-else</code> 指令可以根據指定條件是否成立，決定後續要執行的程式，也可以組合多個 <code>if-else</code> 指令進行更複雜的條件判斷。</p>
-</blockquote>
-<p>Source: <a href="https://en.wikipedia.org/wiki/Conditional_(computer_programming">https://en.wikipedia.org/wiki/Conditional_(computer_programming</a>)</p>
-
-</div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#20351;&#29992;&#26781;&#20214;&#33287;&#32302;&#25490;&#24314;&#31435;&#26781;&#20214;&#21028;&#26039;">&#20351;&#29992;&#26781;&#20214;&#33287;&#32302;&#25490;&#24314;&#31435;&#26781;&#20214;&#21028;&#26039;<a class="anchor-link" href="#&#20351;&#29992;&#26781;&#20214;&#33287;&#32302;&#25490;&#24314;&#31435;&#26781;&#20214;&#21028;&#26039;">&#182;</a></h2><ul>
-<li>條件指的是一段能夠被解讀為布林（<code>bool</code>）的敘述。</li>
-<li>縮排是 Python 用來辨識程式碼依附區塊的結構，要特別留意。</li>
-</ul>
-<div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">CONDITION</span><span class="p">:</span>
-    <span class="c1"># statements to be executed if CONDITION is evaluated as True.</span>
-    <span class="c1"># ...</span>
-</pre></div>
-
-</div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#22810;&#25976;&#31243;&#24335;&#35486;&#35328;&#20351;&#29992;&#22823;&#25324;&#34399;-{}-&#20358;&#27161;&#35387;&#31243;&#24335;&#30908;&#25152;&#20381;&#38468;&#30340;&#25351;&#20196;">&#22810;&#25976;&#31243;&#24335;&#35486;&#35328;&#20351;&#29992;&#22823;&#25324;&#34399; <code>{}</code> &#20358;&#27161;&#35387;&#31243;&#24335;&#30908;&#25152;&#20381;&#38468;&#30340;&#25351;&#20196;<a class="anchor-link" href="#&#22810;&#25976;&#31243;&#24335;&#35486;&#35328;&#20351;&#29992;&#22823;&#25324;&#34399;-{}-&#20358;&#27161;&#35387;&#31243;&#24335;&#30908;&#25152;&#20381;&#38468;&#30340;&#25351;&#20196;">&#182;</a></h2><ul>
-<li>Python 使用<strong>縮排</strong>來標注。</li>
-<li>一段程式碼的依附關係從縮排開始直到第一個未縮排結束。</li>
-<li>縮排必須隨著依附指令的數量而增加。</li>
-</ul>
-
-</div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#20351;&#29992;&#38364;&#20418;&#36939;&#31639;&#31526;&#25110;&#32773;&#37007;&#36655;&#36939;&#31639;&#31526;&#29983;&#25104;&#24067;&#26519;">&#20351;&#29992;&#38364;&#20418;&#36939;&#31639;&#31526;&#25110;&#32773;&#37007;&#36655;&#36939;&#31639;&#31526;&#29983;&#25104;&#24067;&#26519;<a class="anchor-link" href="#&#20351;&#29992;&#38364;&#20418;&#36939;&#31639;&#31526;&#25110;&#32773;&#37007;&#36655;&#36939;&#31639;&#31526;&#29983;&#25104;&#24067;&#26519;">&#182;</a></h2><ul>
-<li>關係運算符：<code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>in</code>, <code>not in</code></li>
-<li>邏輯運算符：<code>and</code>, <code>or</code>, <code>not</code></li>
-</ul>
-
-</div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#20351;&#29992;-if-&#20381;&#25818;&#26781;&#20214;&#30495;&#20551;&#27770;&#23450;&#26159;&#21542;&#22519;&#34892;&#31243;&#24335;&#20998;&#25903;">&#20351;&#29992; <code>if</code> &#20381;&#25818;&#26781;&#20214;&#30495;&#20551;&#27770;&#23450;&#26159;&#21542;&#22519;&#34892;&#31243;&#24335;&#20998;&#25903;<a class="anchor-link" href="#&#20351;&#29992;-if-&#20381;&#25818;&#26781;&#20214;&#30495;&#20551;&#27770;&#23450;&#26159;&#21542;&#22519;&#34892;&#31243;&#24335;&#20998;&#25903;">&#182;</a></h2><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">CONDITION</span><span class="p">:</span>
-    <span class="c1"># statements to be executed if CONDITION is evaluated as True.</span>
-    <span class="c1"># ...</span>
-</pre></div>
-
-</div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">return_msg_if_positive</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is positive.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">return_msg_if_positive</span><span class="p">(</span><span class="mi">5566</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">return_msg_if_positive</span><span class="p">(</span><span class="o">-</span><span class="mi">5566</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gender_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;在學學生數男&#39;</span><span class="p">:</span> <span class="s1">&#39;男&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;在學學生數女&#39;</span><span class="p">:</span> <span class="s1">&#39;女&#39;</span>
+<span class="p">}</span>
+<span class="n">gender</span> <span class="o">=</span> <span class="n">xlsx_df_long</span><span class="p">[</span><span class="s1">&#39;性別&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">gender_dict</span><span class="p">)</span>
+<span class="n">xlsx_df_long</span> <span class="o">=</span> <span class="n">xlsx_df_long</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;性別&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">xlsx_df_long</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;性別&#39;</span><span class="p">,</span> <span class="n">gender</span><span class="p">)</span>
+<span class="n">xlsx_df_long</span>
 </pre></div>
 
      </div>
@@ -15821,14 +16204,191 @@ The film portrays the man's unique way of dealing with his new, torturous life; 
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>5566 is positive.
-None
-</pre>
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>學年度</th>
+      <th>設立別</th>
+      <th>學校類別</th>
+      <th>學校統計處代碼</th>
+      <th>學校名稱</th>
+      <th>系所代碼</th>
+      <th>系所名稱</th>
+      <th>學制班別</th>
+      <th>性別</th>
+      <th>在學學生數</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>2151001</td>
+      <td>音樂學系</td>
+      <td>學士班(日間)</td>
+      <td>男</td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>2151001</td>
+      <td>音樂學系</td>
+      <td>碩士班(日間)</td>
+      <td>男</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>2151001</td>
+      <td>音樂學系</td>
+      <td>碩士在職專班</td>
+      <td>男</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>2221006</td>
+      <td>歷史學系</td>
+      <td>學士班(日間)</td>
+      <td>男</td>
+      <td>135</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>2221006</td>
+      <td>歷史學系</td>
+      <td>碩士班(日間)</td>
+      <td>男</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>139</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>6131028</td>
+      <td>資訊管理學系</td>
+      <td>學士班(日間)</td>
+      <td>女</td>
+      <td>219</td>
+    </tr>
+    <tr>
+      <th>140</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>6131028</td>
+      <td>資訊管理學系</td>
+      <td>碩士班(日間)</td>
+      <td>女</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>141</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>6131028</td>
+      <td>資訊管理學系</td>
+      <td>碩士在職專班</td>
+      <td>女</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>142</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>9231030</td>
+      <td>社會工作學系</td>
+      <td>學士班(日間)</td>
+      <td>女</td>
+      <td>386</td>
+    </tr>
+    <tr>
+      <th>143</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>9231030</td>
+      <td>社會工作學系</td>
+      <td>碩士班(日間)</td>
+      <td>女</td>
+      <td>53</td>
+    </tr>
+  </tbody>
+</table>
+<p>144 rows × 10 columns</p>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -15838,30 +16398,15 @@ None
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#20351;&#29992;-if-&#33287;-else-&#20381;&#25818;&#26781;&#20214;&#30495;&#20551;&#22519;&#34892;&#19981;&#21516;&#31243;&#24335;&#20998;&#25903;">&#20351;&#29992; <code>if</code> &#33287; <code>else</code> &#20381;&#25818;&#26781;&#20214;&#30495;&#20551;&#22519;&#34892;&#19981;&#21516;&#31243;&#24335;&#20998;&#25903;<a class="anchor-link" href="#&#20351;&#29992;-if-&#33287;-else-&#20381;&#25818;&#26781;&#20214;&#30495;&#20551;&#22519;&#34892;&#19981;&#21516;&#31243;&#24335;&#20998;&#25903;">&#182;</a></h2><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">CONDITION</span><span class="p">:</span>
-    <span class="c1"># statements to be executed if CONDITION is evaluated as True.</span>
-    <span class="c1"># ...</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="c1"># statements to be executed if CONDITION is evaluated as False.</span>
-    <span class="c1"># ...</span>
-</pre></div>
-
+<h2 id="&#31721;&#36984;&#36039;&#26009;">&#31721;&#36984;&#36039;&#26009;<a class="anchor-link" href="#&#31721;&#36984;&#36039;&#26009;">&#182;</a></h2>
 </div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">return_msg_whether_positive_or_not</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is positive.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is negative.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">msg</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">return_msg_whether_positive_or_not</span><span class="p">(</span><span class="mi">5566</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">return_msg_whether_positive_or_not</span><span class="p">(</span><span class="o">-</span><span class="mi">5566</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">xlsx_df_long</span><span class="p">[</span><span class="n">xlsx_df_long</span><span class="p">[</span><span class="s1">&#39;系所名稱&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;巨量資料&#39;</span><span class="p">)]</span>
 </pre></div>
 
      </div>
@@ -15877,233 +16422,151 @@ None
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>5566 is positive.
--5566 is negative.
-</pre>
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>學年度</th>
+      <th>設立別</th>
+      <th>學校類別</th>
+      <th>學校統計處代碼</th>
+      <th>學校名稱</th>
+      <th>系所代碼</th>
+      <th>系所名稱</th>
+      <th>學制班別</th>
+      <th>性別</th>
+      <th>在學學生數</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>49</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>4199031</td>
+      <td>巨量資料管理學院碩士在職學位學程</td>
+      <td>碩士在職專班</td>
+      <td>男</td>
+      <td>86</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>4199031</td>
+      <td>巨量資料管理學院碩士學位學程</td>
+      <td>碩士班(日間)</td>
+      <td>男</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>4199031</td>
+      <td>巨量資料管理學院學士學位學程</td>
+      <td>學士班(日間)</td>
+      <td>男</td>
+      <td>210</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>4199032</td>
+      <td>巨量資料分析學士後多元專長培力課程專班</td>
+      <td>學士班(日間)</td>
+      <td>男</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>121</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>4199031</td>
+      <td>巨量資料管理學院碩士在職學位學程</td>
+      <td>碩士在職專班</td>
+      <td>女</td>
+      <td>62</td>
+    </tr>
+    <tr>
+      <th>122</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>4199031</td>
+      <td>巨量資料管理學院碩士學位學程</td>
+      <td>碩士班(日間)</td>
+      <td>女</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>123</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>4199031</td>
+      <td>巨量資料管理學院學士學位學程</td>
+      <td>學士班(日間)</td>
+      <td>女</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>124</th>
+      <td>109</td>
+      <td>私立</td>
+      <td>一般大學</td>
+      <td>1003</td>
+      <td>東吳大學</td>
+      <td>4199032</td>
+      <td>巨量資料分析學士後多元專長培力課程專班</td>
+      <td>學士班(日間)</td>
+      <td>女</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
 </div>
 </div>
 
-</div>
-
-</div>
-
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#20351;&#29992;-if&#12289;elif-&#33287;-else-&#20381;&#25818;&#26781;&#20214;&#30495;&#20551;&#22519;&#34892;&#19981;&#21516;&#31243;&#24335;&#20998;&#25903;">&#20351;&#29992; <code>if</code>&#12289;<code>elif</code> &#33287; <code>else</code> &#20381;&#25818;&#26781;&#20214;&#30495;&#20551;&#22519;&#34892;&#19981;&#21516;&#31243;&#24335;&#20998;&#25903;<a class="anchor-link" href="#&#20351;&#29992;-if&#12289;elif-&#33287;-else-&#20381;&#25818;&#26781;&#20214;&#30495;&#20551;&#22519;&#34892;&#19981;&#21516;&#31243;&#24335;&#20998;&#25903;">&#182;</a></h2><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">CONDITION_A</span><span class="p">:</span>
-    <span class="c1"># statements to be executed if CONDITION_A is evaluated as True.</span>
-    <span class="c1"># ...</span>
-<span class="k">elif</span> <span class="n">CONDITION_B</span><span class="p">:</span>
-    <span class="c1"># statements to be executed if CONDITION_B is evaluated as True.</span>
-    <span class="c1"># ...</span>
-<span class="k">elif</span> <span class="n">CONDITION_C</span><span class="p">:</span>
-    <span class="c1"># statements to be executed if CONDITION_C is evaluated as True.</span>
-    <span class="c1"># ...</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="c1"># statements to be executed if CONDITION_A, CONDITION_B, and CONDITION_C are all evaluated as False.</span>
-    <span class="c1"># ...</span>
-</pre></div>
-
-</div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">return_modulo_divided_by_three</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;The modulo of </span><span class="si">{}</span><span class="s2"> divided by 3 is 1.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;The modulo of </span><span class="si">{}</span><span class="s2"> divided by 3 is 2.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;The modulo of </span><span class="si">{}</span><span class="s2"> divided by 3 is 0.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">msg</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">return_modulo_divided_by_three</span><span class="p">(</span><span class="mi">54</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">return_modulo_divided_by_three</span><span class="p">(</span><span class="mi">55</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">return_modulo_divided_by_three</span><span class="p">(</span><span class="mi">56</span><span class="p">))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>The modulo of 54 divided by 3 is 0.
-The modulo of 55 divided by 3 is 1.
-The modulo of 56 divided by 3 is 2.
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="if&#12289;elif-&#33287;-else-&#24418;&#25104;&#30340;&#26781;&#20214;&#21028;&#26039;&#32080;&#27083;&#20677;&#26371;&#22519;&#34892;&#12300;&#19968;&#20491;&#12301;&#31243;&#24335;&#20998;&#25903;"><code>if</code>&#12289;<code>elif</code> &#33287; <code>else</code> &#24418;&#25104;&#30340;&#26781;&#20214;&#21028;&#26039;&#32080;&#27083;&#20677;&#26371;&#22519;&#34892;&#12300;&#19968;&#20491;&#12301;&#31243;&#24335;&#20998;&#25903;<a class="anchor-link" href="#if&#12289;elif-&#33287;-else-&#24418;&#25104;&#30340;&#26781;&#20214;&#21028;&#26039;&#32080;&#27083;&#20677;&#26371;&#22519;&#34892;&#12300;&#19968;&#20491;&#12301;&#31243;&#24335;&#20998;&#25903;">&#182;</a></h2><ul>
-<li>如果條件彼此之間互斥，寫作條件的先後順序<strong>沒有</strong>影響。</li>
-<li>如果條件彼此之間<strong>非</strong>互斥，寫作條件的先後順序<strong>有</strong>影響。</li>
-</ul>
-
-</div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#20197;&#12300;Fizz-buzz&#12301;&#28858;&#20363;">&#20197;&#12300;Fizz buzz&#12301;&#28858;&#20363;<a class="anchor-link" href="#&#20197;&#12300;Fizz-buzz&#12301;&#28858;&#20363;">&#182;</a></h2><p><a href="https://en.wikipedia.org/wiki/Fizz_buzz">https://en.wikipedia.org/wiki/Fizz_buzz</a></p>
-
-</div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fizz_buzz</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">15</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">ans</span> <span class="o">=</span> <span class="s2">&quot;Fizz Buzz&quot;</span>
-    <span class="k">elif</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">ans</span> <span class="o">=</span> <span class="s2">&quot;Fizz&quot;</span>
-    <span class="k">elif</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">ans</span> <span class="o">=</span> <span class="s2">&quot;Buzz&quot;</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">ans</span> <span class="o">=</span> <span class="n">x</span>
-    <span class="k">return</span> <span class="n">ans</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">fizz_buzz</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">fizz_buzz</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">fizz_buzz</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">fizz_buzz</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>2
-Fizz
-Buzz
-Fizz Buzz
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#20160;&#40636;&#26159;&#36852;&#22280;">&#20160;&#40636;&#26159;&#36852;&#22280;<a class="anchor-link" href="#&#20160;&#40636;&#26159;&#36852;&#22280;">&#182;</a></h2><blockquote><p>迴圈是一種常見的流程控制，雖然在程式中只會出現一次、但卻可能被連續執行多次的程式碼，迴圈中的程式碼會執行特定的次數、執行到特定條件成立時結束或者針對資料結構中的所有內容遍歷。</p>
-</blockquote>
-<p>Source: <a href="https://en.wikipedia.org/wiki/Control_flow#Loops">https://en.wikipedia.org/wiki/Control_flow#Loops</a></p>
-
-</div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#36852;&#22280;&#30340;&#19977;&#20491;&#35201;&#32032;&#65288;&#33287;-Slicing-&#35486;&#27861;&#30456;&#21516;&#65289;">&#36852;&#22280;&#30340;&#19977;&#20491;&#35201;&#32032;&#65288;&#33287; Slicing &#35486;&#27861;&#30456;&#21516;&#65289;<a class="anchor-link" href="#&#36852;&#22280;&#30340;&#19977;&#20491;&#35201;&#32032;&#65288;&#33287;-Slicing-&#35486;&#27861;&#30456;&#21516;&#65289;">&#182;</a></h2><ul>
-<li><code>start</code> 迴圈的起始</li>
-<li><code>stop</code> 迴圈的終止</li>
-<li><code>step</code> 迴圈從起始前往終止的方式</li>
-</ul>
-
-</div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="while-&#36852;&#22280;&#26371;&#22312;&#26781;&#20214;&#34987;&#35413;&#20272;&#28858;-True-&#30340;&#26178;&#20505;&#37325;&#35079;&#22519;&#34892;&#32302;&#25490;&#20839;&#30340;&#31243;&#24335;&#30908;"><code>while</code> &#36852;&#22280;&#26371;&#22312;&#26781;&#20214;&#34987;&#35413;&#20272;&#28858; <code>True</code> &#30340;&#26178;&#20505;&#37325;&#35079;&#22519;&#34892;&#32302;&#25490;&#20839;&#30340;&#31243;&#24335;&#30908;<a class="anchor-link" href="#while-&#36852;&#22280;&#26371;&#22312;&#26781;&#20214;&#34987;&#35413;&#20272;&#28858;-True-&#30340;&#26178;&#20505;&#37325;&#35079;&#22519;&#34892;&#32302;&#25490;&#20839;&#30340;&#31243;&#24335;&#30908;">&#182;</a></h2><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># start</span>
-<span class="k">while</span> <span class="n">CONDITION</span><span class="p">:</span> <span class="c1"># stop</span>
-    <span class="c1"># repeated statements</span>
-    <span class="c1"># ...</span>
-    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># step</span>
-</pre></div>
-
-</div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#25551;&#36848;&#36852;&#22280;&#30340;-step-&#26178;&#24120;&#29992;&#36070;&#20540;&#36939;&#31639;&#31526;&#65288;Assignment-operators&#65289;">&#25551;&#36848;&#36852;&#22280;&#30340; <code>step</code> &#26178;&#24120;&#29992;&#36070;&#20540;&#36939;&#31639;&#31526;&#65288;Assignment operators&#65289;<a class="anchor-link" href="#&#25551;&#36848;&#36852;&#22280;&#30340;-step-&#26178;&#24120;&#29992;&#36070;&#20540;&#36939;&#31639;&#31526;&#65288;Assignment-operators&#65289;">&#182;</a></h2><ul>
-<li><code>i += 1</code> 等同於 <code>i = i + 1</code> </li>
-<li><code>i -= 1</code> 等同於 <code>i = i - 1</code> </li>
-<li><code>i *= 1</code> 等同於 <code>i = i * 1</code> </li>
-<li><code>i /= 1</code> 等同於 <code>i = i / 1</code> </li>
-<li>...etc.</li>
-</ul>
-
-</div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_first_five_odds</span><span class="p">():</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># start</span>
-    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">11</span><span class="p">:</span> <span class="c1"># stop</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-        <span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span> <span class="c1"># step</span>
-
-<span class="n">print_first_five_odds</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>1
-3
-5
-7
-9
-</pre>
-</div>
 </div>
 
 </div>
@@ -16113,740 +16576,9 @@ Fizz Buzz
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="for-&#36852;&#22280;&#26371;&#23559;-in-&#20043;&#24460;&#30340;&#21487;&#36845;&#20195;&#35722;&#25976;&#20013;&#25152;&#26377;&#20839;&#23481;&#36941;&#27511;&#65292;&#30452;&#21040;&#23427;&#30340;&#23614;&#31471;"><code>for</code> &#36852;&#22280;&#26371;&#23559; <code>in</code> &#20043;&#24460;&#30340;&#21487;&#36845;&#20195;&#35722;&#25976;&#20013;&#25152;&#26377;&#20839;&#23481;&#36941;&#27511;&#65292;&#30452;&#21040;&#23427;&#30340;&#23614;&#31471;<a class="anchor-link" href="#for-&#36852;&#22280;&#26371;&#23559;-in-&#20043;&#24460;&#30340;&#21487;&#36845;&#20195;&#35722;&#25976;&#20013;&#25152;&#26377;&#20839;&#23481;&#36941;&#27511;&#65292;&#30452;&#21040;&#23427;&#30340;&#23614;&#31471;">&#182;</a></h2><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ITERABLE</span><span class="p">:</span> <span class="c1"># start/stop/step</span>
-    <span class="c1"># repeated statements</span>
-    <span class="c1"># ...</span>
-</pre></div>
+<h2 id="&#26296;&#35299;&#26356;&#22810;-Pandas-&#25552;&#20379;&#30340;&#21151;&#33021;">&#26296;&#35299;&#26356;&#22810; Pandas &#25552;&#20379;&#30340;&#21151;&#33021;<a class="anchor-link" href="#&#26296;&#35299;&#26356;&#22810;-Pandas-&#25552;&#20379;&#30340;&#21151;&#33021;">&#182;</a></h2><p><a href="http://pandas.pydata.org/pandas-docs/stable/">pandas: powerful Python data analysis toolkit</a></p>
 
 </div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#23459;&#21578;&#21487;&#36845;&#20195;&#35722;&#25976;&#30340;&#30070;&#19979;&#23601;&#23559;&#36852;&#22280;&#30340;&#19977;&#20491;&#35201;&#32032;&#20132;&#20195;&#23436;&#25972;">&#23459;&#21578;&#21487;&#36845;&#20195;&#35722;&#25976;&#30340;&#30070;&#19979;&#23601;&#23559;&#36852;&#22280;&#30340;&#19977;&#20491;&#35201;&#32032;&#20132;&#20195;&#23436;&#25972;<a class="anchor-link" href="#&#23459;&#21578;&#21487;&#36845;&#20195;&#35722;&#25976;&#30340;&#30070;&#19979;&#23601;&#23559;&#36852;&#22280;&#30340;&#19977;&#20491;&#35201;&#32032;&#20132;&#20195;&#23436;&#25972;">&#182;</a></h2><ul>
-<li><code>start</code> 可迭代變數的第 0 項資料。</li>
-<li><code>stop</code> 可迭代變數的最後一項（第 -1 項）。</li>
-<li><code>step</code> 可迭代變數的逗號區隔。</li>
-</ul>
-
-</div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_first_five_odds</span><span class="p">():</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">]:</span> <span class="c1"># start/stop/step</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-
-<span class="n">print_first_five_odds</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>1
-3
-5
-7
-9
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#20351;&#29992;-range-&#20989;&#25976;&#23459;&#21578;&#21487;&#36845;&#20195;&#35722;&#25976;">&#20351;&#29992; <code>range</code> &#20989;&#25976;&#23459;&#21578;&#21487;&#36845;&#20195;&#35722;&#25976;<a class="anchor-link" href="#&#20351;&#29992;-range-&#20989;&#25976;&#23459;&#21578;&#21487;&#36845;&#20195;&#35722;&#25976;">&#182;</a></h2>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">range</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Help on class range in module builtins:
-
-class range(object)
- |  range(stop) -&gt; range object
- |  range(start, stop[, step]) -&gt; range object
- |  
- |  Return an object that produces a sequence of integers from start (inclusive)
- |  to stop (exclusive) by step.  range(i, j) produces i, i+1, i+2, ..., j-1.
- |  start defaults to 0, and stop is omitted!  range(4) produces 0, 1, 2, 3.
- |  These are exactly the valid indices for a list of 4 elements.
- |  When step is given, it specifies the increment (or decrement).
- |  
- |  Methods defined here:
- |  
- |  __bool__(self, /)
- |      self != 0
- |  
- |  __contains__(self, key, /)
- |      Return key in self.
- |  
- |  __eq__(self, value, /)
- |      Return self==value.
- |  
- |  __ge__(self, value, /)
- |      Return self&gt;=value.
- |  
- |  __getattribute__(self, name, /)
- |      Return getattr(self, name).
- |  
- |  __getitem__(self, key, /)
- |      Return self[key].
- |  
- |  __gt__(self, value, /)
- |      Return self&gt;value.
- |  
- |  __hash__(self, /)
- |      Return hash(self).
- |  
- |  __iter__(self, /)
- |      Implement iter(self).
- |  
- |  __le__(self, value, /)
- |      Return self&lt;=value.
- |  
- |  __len__(self, /)
- |      Return len(self).
- |  
- |  __lt__(self, value, /)
- |      Return self&lt;value.
- |  
- |  __ne__(self, value, /)
- |      Return self!=value.
- |  
- |  __reduce__(...)
- |      Helper for pickle.
- |  
- |  __repr__(self, /)
- |      Return repr(self).
- |  
- |  __reversed__(...)
- |      Return a reverse iterator.
- |  
- |  count(...)
- |      rangeobject.count(value) -&gt; integer -- return number of occurrences of value
- |  
- |  index(...)
- |      rangeobject.index(value) -&gt; integer -- return index of value.
- |      Raise ValueError if the value is not present.
- |  
- |  ----------------------------------------------------------------------
- |  Static methods defined here:
- |  
- |  __new__(*args, **kwargs) from builtins.type
- |      Create and return a new object.  See help(type) for accurate signature.
- |  
- |  ----------------------------------------------------------------------
- |  Data descriptors defined here:
- |  
- |  start
- |  
- |  step
- |  
- |  stop
-
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#36939;&#29992;&#31243;&#24335;&#30908;&#35222;&#35258;&#21270;&#24037;&#20855;&#21332;&#21161;&#29702;&#35299;&#27969;&#31243;&#25511;&#21046;">&#36939;&#29992;&#31243;&#24335;&#30908;&#35222;&#35258;&#21270;&#24037;&#20855;&#21332;&#21161;&#29702;&#35299;&#27969;&#31243;&#25511;&#21046;<a class="anchor-link" href="#&#36939;&#29992;&#31243;&#24335;&#30908;&#35222;&#35258;&#21270;&#24037;&#20855;&#21332;&#21161;&#29702;&#35299;&#27969;&#31243;&#25511;&#21046;">&#182;</a></h2><p><a href="http://www.pythontutor.com/visualize.html#mode=edit">http://www.pythontutor.com/visualize.html#mode=edit</a></p>
-
-</div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#20160;&#40636;&#26159;&#21487;&#36845;&#20195;&#35722;&#25976;">&#20160;&#40636;&#26159;&#21487;&#36845;&#20195;&#35722;&#25976;<a class="anchor-link" href="#&#20160;&#40636;&#26159;&#21487;&#36845;&#20195;&#35722;&#25976;">&#182;</a></h2><p>可迭代變數（iterable）指的是 Python 中具有一次回傳其中一個資料值特性的類別，常見的可迭代變數包含文字與資料結構。</p>
-
-</div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">iterate_a_string</span><span class="p">(</span><span class="n">a_string</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a_string</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-
-<span class="n">may4th</span> <span class="o">=</span> <span class="s2">&quot;Luke, use the Force!&quot;</span>
-<span class="n">iterate_a_string</span><span class="p">(</span><span class="n">may4th</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>L
-u
-k
-e
-,
- 
-u
-s
-e
- 
-t
-h
-e
- 
-F
-o
-r
-c
-e
-!
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#22914;&#20309;&#36941;&#27511;&#19968;&#20491;-list&#12289;tuple-&#25110;-set-&#20013;&#30340;&#20540;">&#22914;&#20309;&#36941;&#27511;&#19968;&#20491; <code>list</code>&#12289;<code>tuple</code> &#25110; <code>set</code> &#20013;&#30340;&#20540;<a class="anchor-link" href="#&#22914;&#20309;&#36941;&#27511;&#19968;&#20491;-list&#12289;tuple-&#25110;-set-&#20013;&#30340;&#20540;">&#182;</a></h2>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">iterate_a_seq</span><span class="p">(</span><span class="n">a_seq</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a_seq</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-
-<span class="n">iterate_a_seq</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;===&quot;</span><span class="p">)</span>
-<span class="n">iterate_a_seq</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;===&quot;</span><span class="p">)</span>
-<span class="n">iterate_a_seq</span><span class="p">({</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">})</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>2
-3
-5
-===
-2
-3
-5
-===
-2
-3
-5
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#22914;&#20309;&#36941;&#27511;&#19968;&#20491;-dict">&#22914;&#20309;&#36941;&#27511;&#19968;&#20491; <code>dict</code><a class="anchor-link" href="#&#22914;&#20309;&#36941;&#27511;&#19968;&#20491;-dict">&#182;</a></h2><p>善用三個常用方法：</p>
-<ol>
-<li><code>.keys()</code></li>
-<li><code>.values()</code></li>
-<li><code>.items()</code></li>
-</ol>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">the_shawshank_redemption</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;The Shawshank Redemption&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="mi">1994</span><span class="p">,</span>
-    <span class="s1">&#39;rating&#39;</span><span class="p">:</span> <span class="mf">9.3</span><span class="p">,</span>
-    <span class="s1">&#39;director&#39;</span><span class="p">:</span> <span class="s1">&#39;Frank Darabont&#39;</span>
-<span class="p">}</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">the_shawshank_redemption</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>title
-year
-rating
-director
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">the_shawshank_redemption</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>The Shawshank Redemption
-1994
-9.3
-Frank Darabont
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">the_shawshank_redemption</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>title: The Shawshank Redemption
-year: 1994
-rating: 9.3
-director: Frank Darabont
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#19981;&#21487;&#36845;&#20195;&#30340;&#35722;&#25976;">&#19981;&#21487;&#36845;&#20195;&#30340;&#35722;&#25976;<a class="anchor-link" href="#&#19981;&#21487;&#36845;&#20195;&#30340;&#35722;&#25976;">&#182;</a></h2><ul>
-<li><code>int</code></li>
-<li><code>float</code></li>
-<li><code>bool</code></li>
-</ul>
-
-</div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">is_x_iterable</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">I</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">True</span>
-    <span class="k">except</span><span class="p">:</span>
-        <span class="n">x_type</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="k">return</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is not iterable&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x_type</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">is_x_iterable</span><span class="p">(</span><span class="mi">5566</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">is_x_iterable</span><span class="p">(</span><span class="mf">5566.0</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">is_x_iterable</span><span class="p">(</span><span class="kc">True</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">is_x_iterable</span><span class="p">(</span><span class="kc">False</span><span class="p">))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&lt;class &#39;int&#39;&gt; is not iterable
-&lt;class &#39;float&#39;&gt; is not iterable
-&lt;class &#39;bool&#39;&gt; is not iterable
-&lt;class &#39;bool&#39;&gt; is not iterable
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#24120;&#35211;&#30340;&#36852;&#22280;&#25033;&#29992;">&#24120;&#35211;&#30340;&#36852;&#22280;&#25033;&#29992;<a class="anchor-link" href="#&#24120;&#35211;&#30340;&#36852;&#22280;&#25033;&#29992;">&#182;</a></h2><ul>
-<li>合併</li>
-<li>計數</li>
-<li>加總</li>
-<li>遍歷複雜的資料結構</li>
-</ul>
-
-</div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#24120;&#35211;&#30340;&#36852;&#22280;&#25033;&#29992;&#65306;&#21512;&#20341;">&#24120;&#35211;&#30340;&#36852;&#22280;&#25033;&#29992;&#65306;&#21512;&#20341;<a class="anchor-link" href="#&#24120;&#35211;&#30340;&#36852;&#22280;&#25033;&#29992;&#65306;&#21512;&#20341;">&#182;</a></h2><p>透過 <code>list</code> 的 <code>.append()</code> 方法合併。</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">find_odds_between_x_y</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="n">odds</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">odds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">odds</span>
-
-<span class="n">find_odds_between_x_y</span><span class="p">(</span><span class="mi">55</span><span class="p">,</span> <span class="mi">66</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[41]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[55, 57, 59, 61, 63, 65]</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#24120;&#35211;&#30340;&#36852;&#22280;&#25033;&#29992;&#65306;&#35336;&#25976;">&#24120;&#35211;&#30340;&#36852;&#22280;&#25033;&#29992;&#65306;&#35336;&#25976;<a class="anchor-link" href="#&#24120;&#35211;&#30340;&#36852;&#22280;&#25033;&#29992;&#65306;&#35336;&#25976;">&#182;</a></h2><p>透過 <code>count += 1</code> 計數。</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">count_odds_between_x_y</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="k">return</span> <span class="n">count</span>
-
-<span class="n">count_odds_between_x_y</span><span class="p">(</span><span class="mi">55</span><span class="p">,</span> <span class="mi">66</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[42]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>6</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#24120;&#35211;&#30340;&#36852;&#22280;&#25033;&#29992;&#65306;&#21152;&#32317;">&#24120;&#35211;&#30340;&#36852;&#22280;&#25033;&#29992;&#65306;&#21152;&#32317;<a class="anchor-link" href="#&#24120;&#35211;&#30340;&#36852;&#22280;&#25033;&#29992;&#65306;&#21152;&#32317;">&#182;</a></h2><p>透過 <code>summation += i</code> 加總。</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sum_odds_between_x_y</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="n">summation</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">summation</span> <span class="o">+=</span> <span class="n">i</span>
-    <span class="k">return</span> <span class="n">summation</span>
-
-<span class="n">sum_odds_between_x_y</span><span class="p">(</span><span class="mi">55</span><span class="p">,</span> <span class="mi">66</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[43]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>360</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#24120;&#35211;&#30340;&#36852;&#22280;&#25033;&#29992;&#65306;&#36941;&#27511;&#35079;&#38620;&#30340;&#36039;&#26009;&#32080;&#27083;">&#24120;&#35211;&#30340;&#36852;&#22280;&#25033;&#29992;&#65306;&#36941;&#27511;&#35079;&#38620;&#30340;&#36039;&#26009;&#32080;&#27083;<a class="anchor-link" href="#&#24120;&#35211;&#30340;&#36852;&#22280;&#25033;&#29992;&#65306;&#36941;&#27511;&#35079;&#38620;&#30340;&#36039;&#26009;&#32080;&#27083;">&#182;</a></h2><p>透過巢狀迴圈遍歷複雜的資料結構。</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">batman_trilogy</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;titles&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Batman Begins&quot;</span><span class="p">,</span> <span class="s2">&quot;The Dark Knight&quot;</span><span class="p">,</span> <span class="s2">&quot;The Dark Knight Rises&quot;</span><span class="p">],</span>
-    <span class="s2">&quot;release_dates&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;June 15, 2005&quot;</span><span class="p">,</span> <span class="s2">&quot;July 18, 2008&quot;</span><span class="p">,</span> <span class="s2">&quot;July 20, 2012&quot;</span><span class="p">],</span>
-    <span class="s2">&quot;director&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Christopher Nolan&quot;</span><span class="p">,</span> <span class="s2">&quot;Christopher Nolan&quot;</span><span class="p">,</span> <span class="s2">&quot;Christopher Nolan&quot;</span><span class="p">]</span>
-<span class="p">}</span>
-<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">batman_trilogy</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Batman Begins
-The Dark Knight
-The Dark Knight Rises
-June 15, 2005
-July 18, 2008
-July 20, 2012
-Christopher Nolan
-Christopher Nolan
-Christopher Nolan
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div></section></section>
 </div>
 </div>
